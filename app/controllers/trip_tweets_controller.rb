@@ -17,6 +17,6 @@ class TripTweetsController < ApplicationController
  
   def triptweet_params
    #「投稿者」のキーも追加
-   params.require(:trip_tweet).permit(:user_id, :twitter_id,:price, :discount, :age_id, :area_id, :week_id, :crowd_id, :title, :text, :corona_measure, :local, :traffic, :fare).merge( user_id:current_user.id)
+   params.require(:trip_tweet).permit(:image,:user_id, :twitter_id,:price, :discount, :age_id, :area_id, :week_id, :crowd_id, :title, :text, :corona_measure, :local, :traffic, :fare).merge( user_id:current_user.id)
   end
 end

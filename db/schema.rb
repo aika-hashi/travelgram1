@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_124852) do
 
   create_table "hotel_tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "images", default: "", null: false
+    t.string "image", default: "", null: false
     t.string "price", null: false
     t.string "discount", null: false
     t.integer "area_id", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_124852) do
 
   create_table "trip_tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "images", default: "", null: false
+    t.string "image", default: "", null: false
     t.string "price", null: false
     t.string "discount", null: false
     t.integer "area_id", null: false
