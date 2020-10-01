@@ -7,5 +7,6 @@ class TripTweet < ApplicationRecord
   belongs_to_active_hash :week
 
   validates :area_id, numericality: { other_than: 1 }
-  validates :images,:local, :title, :price,:text,presence: true
+  validates :local, :title, :price,:text,presence: true
+  #後でimages追加
 end
