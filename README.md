@@ -85,7 +85,7 @@ Things you may want to cover:
 | text           | text       | null: false                    |
 | corona_measure | text       | null: false                    |
 | local          | string     | null: false                    |
-
+ 
 ### Association
 
 - belongs_to :user
