@@ -41,7 +41,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :twitters
+- has_many :hotel_tweets
+- has_many :trip_tweets
 - has_many :hotel_tweet_comments
 - has_many :trip_tweet_comments
 - has_many :hotel_bookmarks
@@ -53,7 +54,7 @@ Things you may want to cover:
 - has_one_attached :image
 
 
-
+<!-- 
 ## twitters テーブル
 
 | Column | Type       | Options                        |
@@ -65,7 +66,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :hotel_tweets
-- has_many :trip_tweets
+- has_many :trip_tweets -->
 
 
 ## hotel_tweets テーブル
@@ -75,7 +76,6 @@ Things you may want to cover:
 | price          | string     | null: false                    |
 | discount       | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
-| age_id         | integer    | null: false                    |
 | area_id        | integer    | null: false                    |
 | day_id         | integer    | null: false                    |
 | crowd_id       | integer    | null: false                    |
@@ -88,8 +88,8 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :twitter
-- has_many :comments
+- belongs_to :user
+- has_many :hotel_tweet_comments
 - belongs_to_active_hash :crowd
 - belongs_to_active_hash :area
 - belongs_to_active_hash :day
@@ -115,8 +115,8 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :twitter
-- has_many :comments
+- belongs_to :user
+- has_many :trip_tweet_comments
 - belongs_to_active_hash :crowd
 - belongs_to_active_hash :area
 - belongs_to_active_hash :day

@@ -7,7 +7,7 @@
 <%# 宿の情報 %>
   <div class="items-sell-main">
     <h2 class="items-sell-title">宿泊施設</h2>
-    <%= form_with  model: @tweet,local: true do |f| %>
+    <%= form_with  model: @hoteltweet,local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%= render 'shared/error_messages', model: f.object %>

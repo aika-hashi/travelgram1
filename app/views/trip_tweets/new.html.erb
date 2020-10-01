@@ -7,7 +7,7 @@ div class="items-sell-contents">
 <%# 観光の情報 %>
   <div class="items-sell-main">
     <h2 class="items-sell-title">観光スポット</h2>
-    <%= form_with  model: @trip,local: true do |f| %>
+    <%= form_with  model: @triptweet,local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%= render 'shared/error_messages', model: f.object %>

@@ -1,5 +1,5 @@
 class TripTweet < ApplicationRecord
-  belongs_to :twitter
+  belongs_to :user
   has_many_attached :images
   belongs_to_active_hash :area
   belongs_to_active_hash :crowd

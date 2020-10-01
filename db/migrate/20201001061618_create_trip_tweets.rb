@@ -1,7 +1,7 @@
 class CreateTripTweets < ActiveRecord::Migration[6.0]
   def change
     create_table :trip_tweets do |t|
-      t.references :twitter           , foreign_key: true
+      t.references :user          , foreign_key: true
       t.string :images     , null: false ,default: ""
       t.string :price, null: false
       t.string :discount, null: false

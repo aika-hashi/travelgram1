@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'twitters#index'
 
-  resources :users, only: [:edit, :update]
+  resources :users
 
-  resources :twitters,only: [:index, :show]
   resources :hotel_tweets
   resources :trip_tweets
+
+  
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
