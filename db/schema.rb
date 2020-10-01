@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_124852) do
     t.string "price", null: false
     t.string "discount", null: false
     t.integer "area_id", null: false
+    t.integer "agency_id", null: false
     t.integer "day_id", null: false
     t.integer "crowd_id", null: false
     t.integer "week_id", null: false

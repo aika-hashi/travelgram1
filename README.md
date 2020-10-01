@@ -77,9 +77,10 @@ Things you may want to cover:
 | discount       | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
 | area_id        | integer    | null: false                    |
+| agency_id      | integer    | null: false                    |
 | day_id         | integer    | null: false                    |
 | crowd_id       | integer    | null: false                    |
-| week_id         | integer    | null: false                    |
+| week_id        | integer    | null: false                    |
 <!-- | agency_id      | integer    | null: false                    | -->
 | title          | string     | null: false                    |
 | text           | text       | null: false                    |
@@ -93,6 +94,7 @@ Things you may want to cover:
 - belongs_to_active_hash :crowd
 - belongs_to_active_hash :area
 - belongs_to_active_hash :day
+- belongs_to_active_hash :agency
 - has_one_attached :image
 - has_one :trip
 

@@ -6,6 +6,7 @@ class HotelTweet < ApplicationRecord
   belongs_to_active_hash :crowd
   belongs_to_active_hash :day
   belongs_to_active_hash :week
+  belongs_to_active_hash :agency
   
   
   validates :area_id, numericality: { other_than: 1 }

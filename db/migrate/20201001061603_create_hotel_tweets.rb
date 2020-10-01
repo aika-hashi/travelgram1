@@ -6,6 +6,7 @@ class CreateHotelTweets < ActiveRecord::Migration[6.0]
       t.string :price, null: false
       t.string :discount, null: false
       t.integer :area_id, null: false
+      t.integer :agency_id, null: false
       t.integer :day_id, null: false
       t.integer :crowd_id, null: false
       t.integer :week_id, null: false

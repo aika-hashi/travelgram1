@@ -107,7 +107,7 @@
       </div>
     </div>
     <div class="weight-bold-text">
-          元値
+          だいたいどのくらい安くなったか
         </div>
         <span class="sell-yen">¥</span>
         <%= f.text_area :discount, class:"hotel-area", id:"item-name", placeholder:"例）5000", maxlength:"40" %>
@@ -129,8 +129,14 @@
         <%= f.text_area :corona_measure, class:"hotel-area", id:"item-name", placeholder:" 宿でなされていたコロナ対策について（必須 40文字まで)", maxlength:"40" %>
       </div>
     </div>
-   <%# /コロナ対策 %>  
+   <%# コロナ対策 %>  
      
+     <%# 旅行サイト %>  
+      <div class="weight-bold-text">
+          利用した旅行サイト
+        </div>
+        <%= f.collection_select(:agency_id, Agency.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+   <%# /旅行サイト %>  
 
       <%# 宿の説明 %>
       <div class="items-explain">
