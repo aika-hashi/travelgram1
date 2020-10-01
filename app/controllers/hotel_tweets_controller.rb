@@ -1,0 +1,2 @@
+class HotelTweetsController < ApplicationController
+end

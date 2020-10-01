@@ -1,0 +1,2 @@
+class TripTweetsController < ApplicationController
+end
