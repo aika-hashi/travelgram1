@@ -9,7 +9,7 @@ class CreateTripTweets < ActiveRecord::Migration[6.0]
       t.integer :week_id, null: false
       t.integer :crowd_id, null: false
       t.string  :title, null: false
-      t.text  :spot_text, null: false
+      t.text  :text, null: false
       t.text  :corona_measure, null: false
       t.text  :traffic, null: false
       t.string  :fare, null: false

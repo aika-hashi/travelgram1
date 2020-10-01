@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_061618) do
     t.integer "crowd_id", null: false
     t.integer "week_id", null: false
     t.string "title", null: false
-    t.text "hotel_text", null: false
+    t.text "text", null: false
     t.text "corona_measure", null: false
     t.string "local", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_061618) do
     t.integer "week_id", null: false
     t.integer "crowd_id", null: false
     t.string "title", null: false
-    t.text "spot_text", null: false
+    t.text "text", null: false
     t.text "corona_measure", null: false
     t.text "traffic", null: false
     t.string "fare", null: false

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'twitters#index'
+  root to: 'hotel_tweets#index'
 
   resources :users
 
@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   resources :trip_tweets
 
   
-  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

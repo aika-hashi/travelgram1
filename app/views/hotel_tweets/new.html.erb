@@ -41,9 +41,10 @@
       </div>
     </div>
 
-    <% @tweet.images.each do |image| %>
-  <%= image_tag image, class: 'images' %>
-<% end %>
+<%#プレビュー%>
+    <%# <% @hoteltweet.images.each do |image| %>
+  <%# <%= image_tag image, class: 'images' %> 
+<%# <% end %> 
     <%# /宿の画像 %>
 
 <%# 宿の動画 %>
@@ -137,7 +138,7 @@
           キャプション記入
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hotel_text, class:"items-text", id:"item-info", placeholder:"宿の説明 自由（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"宿の説明 自由（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /宿の説明 %>

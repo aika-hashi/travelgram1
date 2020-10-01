@@ -44,10 +44,10 @@ div class="items-sell-contents">
         <div id="image-list"></div>
       </div>
     </div>
-
-    <% @trip.images.each do |image| %>
-  <%= image_tag image, class: 'images' %>
-<% end %>
+<%#プレビュー%>
+    <%# <% @triptweet.images.each do |image| %> 
+  <%# <%= image_tag image, class: 'images' %> 
+<%# <% end %> 
     <%# /観光スポットの画像 %>
 
 <%# 観光スポットの動画 %>
@@ -158,7 +158,7 @@ div class="items-sell-contents">
           キャプション記入
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :spot_text, class:"items-text", id:"item-info", placeholder:"宿の説明 自由（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"宿の説明 自由（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /観光スポットの説明 %>

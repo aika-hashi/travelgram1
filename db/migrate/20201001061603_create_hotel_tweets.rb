@@ -10,7 +10,7 @@ class CreateHotelTweets < ActiveRecord::Migration[6.0]
       t.integer :crowd_id, null: false
       t.integer :week_id, null: false
       t.string  :title, null: false
-      t.text  :hotel_text, null: false
+      t.text  :text, null: false
       t.text  :corona_measure, null: false
       t.string  :local, null: false
       t.timestamps
