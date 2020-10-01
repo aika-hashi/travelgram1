@@ -1,0 +1,2 @@
+class HotelTweet < ApplicationRecord
+end

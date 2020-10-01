@@ -10,7 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_031823) do
+ActiveRecord::Schema.define(version: 2020_10_01_061618) do
+
+  create_table "hotel_tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "twitter_id"
+    t.string "images", default: "", null: false
+    t.string "price", null: false
+    t.string "discount", null: false
+    t.integer "area_id", null: false
+    t.integer "day_id", null: false
+    t.integer "crowd_id", null: false
+    t.integer "week_id", null: false
+    t.string "title", null: false
+    t.text "hotel_text", null: false
+    t.text "corona_measure", null: false
+    t.string "local", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["twitter_id"], name: "index_hotel_tweets_on_twitter_id"
+  end
+
+  create_table "trip_tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "twitter_id"
+    t.string "images", default: "", null: false
+    t.string "price", null: false
+    t.string "discount", null: false
+    t.integer "area_id", null: false
+    t.integer "week_id", null: false
+    t.integer "crowd_id", null: false
+    t.string "title", null: false
+    t.text "spot_text", null: false
+    t.text "corona_measure", null: false
+    t.text "traffic", null: false
+    t.string "fare", null: false
+    t.string "local", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["twitter_id"], name: "index_trip_tweets_on_twitter_id"
+  end
+
+  create_table "twitters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_twitters_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,4 +74,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_031823) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "hotel_tweets", "twitters"
+  add_foreign_key "trip_tweets", "twitters"
+  add_foreign_key "twitters", "users"
 end

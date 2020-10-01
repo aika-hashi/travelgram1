@@ -1,0 +1,2 @@
+class TripTweet < ApplicationRecord
+end
