@@ -79,10 +79,10 @@ Things you may want to cover:
 | area_id        | integer    | null: false                    |
 | day_id         | integer    | null: false                    |
 | crowd_id       | integer    | null: false                    |
-| agency_id      | integer    | null: false                    |
+| week_id         | integer    | null: false                    |
+<!-- | agency_id      | integer    | null: false                    | -->
 | title          | string     | null: false                    |
-| hotel_text     | text       | null: false                    |
-| spot_text      | text       | null: false                    |
+| text           | text       | null: false                    |
 | corona_measure | text       | null: false                    |
 | local          | string     | null: false                    |
 
@@ -104,7 +104,7 @@ Things you may want to cover:
 | discount       | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
 | area_id        | integer    | null: false                    |
-| day_id         | integer    | null: false                    |
+| week_id         | integer    | null: false                    |
 | crowd_id       | integer    | null: false                    |
 | title          | string     | null: false                    |
 | text           | text       | null: false                    |
