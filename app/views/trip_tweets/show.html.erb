@@ -9,12 +9,12 @@
       <%= @triptweet.title %>
     </h2>
      <%#画像複数枚%>
-      <%# <div class='travel-img-content'> %>
-      <%# <% @triptweet.images.each do |image| %> 
-      <%# <%= image_tag image ,class:"item-box-img" %> 
-      <%# <%end%> 
+       <div class='travel-img-content'> 
+       <% @triptweet.images.each do |image| %> 
+       <%= image_tag image ,class:"item-box-img" %> 
+       <%end%> 
     <%#画像1枚%>
-    <%= image_tag @triptweet.image ,class:"item-box-img" %>
+    <%# <%= image_tag @triptweet.image ,class:"item-box-img" %> 
     
       <span><%= @triptweet.text %></span>
    

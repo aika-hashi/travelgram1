@@ -9,7 +9,7 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
+  background-image: image-url('travel-header02.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -32,7 +32,7 @@ a {
 }
 
 .store-btn {
-  display: flex;
+  display: flex;align-items: center;
   margin-top: 24px;
 }
 
@@ -91,7 +91,7 @@ a {
 }
 
 .reason-list-number {
-  position: absolute;
+ 
   top: 0;
   left: 0;
   width: 60px;
@@ -124,7 +124,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  background-image: image-url('travel-header03.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -220,7 +220,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0;
 }
 
 .item-contents>.title {
@@ -239,9 +240,11 @@ a {
 
 .item-lists {
   width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+  // flex-wrap: wrap; #折り返し
 }
 
 .item-lists>.list {
@@ -252,28 +255,15 @@ a {
 
 
 .item-img-content {
-  position: relative;
+  position: relative;right:200px
 }
 
-.item-img {
-  width: 33vh;
-  height: 33vh;
+.images {
+  width: 100vh;
+  height: 75vh;
 }
 
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
 
-.sold-out>span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
 
 
 .item-info {
@@ -283,11 +273,11 @@ a {
 }
 
 .item-name {
-  font-size: 2.5vh;
+  font-size: 3vh;
 }
 
 .item-price {
-  font-size: 1.5vh;
+  font-size: 2vh;
   display: flex;
   justify-content: space-between;
 }
