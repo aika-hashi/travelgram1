@@ -1,0 +1,13 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       firstname: 名前
+       familyname: 苗字
+       firstname_kana: 名前のカナ
+       familyname_kana: 苗字のカナ
+       date: 生年月日
+    
+ 
+       

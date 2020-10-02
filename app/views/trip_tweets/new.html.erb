@@ -21,7 +21,7 @@
     <%# 旅行タイトル %>
     <div class="new-items">
       <div class="weight-bold-text">
-        タイトル
+        観光スポット名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
@@ -155,7 +155,7 @@
       <%# 観光スポットの説明 %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          キャプション記入
+          キャプション
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"宿の説明 自由（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
