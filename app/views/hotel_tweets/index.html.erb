@@ -98,31 +98,31 @@
     
    <ul class='item-lists'>
       
-      <% @tweet.each do |tweet| %>
+      <% @hoteltweet.each do |hoteltweet| %>
     
     <li class='list'>
       <div class='item-info'>
           <h3 class='item-name'>
-            <%= tweet.title %>
+            <%= hoteltweet.title %>
           </h3>
            <div class='item-name'>
-            <%= tweet.area.name%>    <%= tweet.local%>         
+            <%= hoteltweet.area.name%>    <%= hoteltweet.local%>         
           </div>
           
              <div class='item-name'>
             <%= "宿泊施設"%>
            </div> 
         <div class='item-img-content'>
-        <% tweet.images.each do |image| %>
-         <%= link_to  tweet_path(tweet.id) do %>
+        <% hoteltweet.image.each do |image| %>
+         <%= link_to  hoteltweet_path(hoteltweet.id) do %>
           <%= image_tag image ,class: 'images'   %>
         <% end %>
         <% end %>
          </div>
 
-         <p>
+         <%# <p>
           <strong>Video:</strong>
-        </p>
+        </p> %>
          <%# <p>
        <%= link_to tweet.video_url.to_s do %>
       <%# <%= image_tag(tweet.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
@@ -133,7 +133,7 @@
         <div class='item-info'>
           
           <div class='item-price'>
-            <span><%= tweet.price %>円<br>(税込み)</span>
+            <span><%= hoteltweet.price %>円<br>(税込み)</span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
@@ -149,7 +149,7 @@
   <%# 観光スポット投稿一覧 %>
     <ul class='item-lists'>
       
-      <% @trip.each do |trip| %>
+      <% @triptweet.each do |triptweet| %>
     
     <li class='list'>
       <div class='item-info'>
@@ -157,24 +157,24 @@
             <%= trip.title %>
           </h3>
            <div class='item-name'>
-            <%= trip.area.name%>    <%= trip.local%>         
+            <%= triptweet.area.name%>    <%= triptweet.local%>         
           </div>
           
              <div class='item-name'>
             <%= "観光スポット"%>
            </div> 
         <div class='item-img-content'>
-        <% trip.images.each do |image| %>
-        <%= link_to  trip_path(trip.id) do %>
+        <% triptweet.image.each do |image| %>
+        <%= link_to  triptweet_path(triptweet.id) do %>
 
           <%= image_tag image ,class: 'images'   %>
         <% end %>
         <% end %>
          </div>
 
-        <p>
+        <%# <p>
           <strong>Video:</strong>
-        </p>
+        </p> %>
          <%# <p>
        <%= link_to trip.video_url.to_s do %>
       <%# <%= image_tag(trip.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %> 
@@ -185,7 +185,7 @@
         <div class='item-info'>
           
           <div class='item-price'>
-            <span><%= trip.price %>円<br>(税込み)</span>
+            <span><%= triptweet.price %>円<br>(税込み)</span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
