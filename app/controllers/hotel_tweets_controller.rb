@@ -29,6 +29,39 @@ class HotelTweetsController < ApplicationController
 
   end
 end
+
+def show
+  @hoteltweet = HotelTweet.find(params[:id])
+  @hoteltweets = HotelTweet.all.includes(:user)
+  # @comment = Comment.new
+  # @comments = @tweet.comments.includes(:user)
+  # @trip = Trip.find(params[:id])
+end
+
+
+def edit
+  @hoteltweet = HotelTweet.find(params[:id])
+
+end
+
+def update
+  @hoteltweet = HotelTweet.find(params[:id])
+  if @hoteltweet.update(hoteltweet_params)
+    redirect_to hotel_tweet_path(@hoteltweet)
+  else
+    render :edit
+  end
+end
+ 
+ 
+
+def destroy
+  @hoteltweet = HotelTweet.find(params[:id])
+  if @hoteltweet.destroy
+    redirect_to root_path
+  end
+end
+
  
   private
  

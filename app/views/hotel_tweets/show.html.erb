@@ -1,0 +1,132 @@
+<%= render "shared/header" %>
+
+
+
+    
+
+
+    <%# 商品が売れていない場合はこちらを表示しましょう %>
+    <%# <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%> 
+    <%# //商品が売れていない場合はこちらを表示しましょう %>
+
+
+  <%#宿泊施設%>
+<div class="detail-value"><%=link_to @hoteltweet.user.nickname, "#"%> </div>
+        <%# <div class='item-img-content'>
+      <%= image_tag @user.image ,class:"item-box-img" %> 
+  
+  
+    <h2 class="name">
+      <%= @hoteltweet.title %>
+    </h2>
+    <%#画像複数枚%>
+      <%# <div class='travel-img-content'> %>
+      <%# <% @hoteltweet.images.each do |image| %> 
+      <%# <%= image_tag image ,class:"item-box-img" %> 
+      <%# <%end%> 
+    <%#画像1枚%>
+    <%= image_tag @hoteltweet.image ,class:"item-box-img" %>
+    
+
+      <span><%= @hoteltweet.text %></span>
+   
+   
+   
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">都道府県</th>
+          <td class="detail-value"><%= @hoteltweet.area.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">地域</th>
+          <td class="detail-value"><%= @hoteltweet.local %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">宿泊日数</th>
+          <td class="detail-value"><%= @hoteltweet.day.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">宿泊開始の曜日</th>
+          <td class="detail-value"><%= @hoteltweet.week.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">宿の料金</th>
+          <td class="detail-value"> ¥ <%= @hoteltweet.price%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">元値</th>
+          <td class="detail-value"> ¥ <%= @hoteltweet.discount%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">混雑状況</th>
+          <td class="detail-value"><%= @hoteltweet.crowd.name%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">宿のコロナ対策</th>
+          <td class="detail-value"><%= @hoteltweet.corona_measure%></td>
+        </tr>
+        <%# <tr> %>
+        <%#ブックマーク%>
+          <%# <% if @tweet.bookmark_by?(current_user) %> 
+      <%# <td><%= link_to "お気に入りを外す", tweet_bookmarks_path(@tweet), method: :delete %>
+    <%# <% else %> 
+      <%# <td><%= link_to "お気に入り",tweet_bookmarks_path(@tweet), method: :post %>
+    <%# <% end %> 
+        <%# </tr> %>
+      </tbody>
+    </table>
+   
+   <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り </span>
+      </div>easure
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な商品の通報</span>
+      </div>
+    </div>
+<%#お気に入り%>
+
+   
+
+  <%#宿泊施設%>
+
+  
+
+<%  if  current_user.id == @hoteltweet.user_id %>
+    <%= link_to '投稿の編集', edit_hotel_tweet_path(@hoteltweet.id), method: :get, class: "item-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除', hotel_tweet_path(@hoteltweet.id), method: :delete, class:'item-destroy' %>
+<% end %>
+
+
+
+
+
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+
+<%#追加コメント%>
+  
+ 
+    
+  
+  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+</div>
+
+<%= render "shared/footer" %>

@@ -4,33 +4,29 @@
 
   </header>
 
-<%# 観光の情報 %>
+<%# 宿の情報 %>
   <div class="items-sell-main">
-    <h2 class="items-sell-title">観光スポット</h2>
-    <%= form_with  model: @triptweet,local: true do |f| %>
+    <h2 class="items-sell-title">宿泊施設</h2>
+    <%= form_with  model: @hoteltweet,local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%= render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
-
-
-   
-
     
     <%# 旅行タイトル %>
     <div class="new-items">
       <div class="weight-bold-text">
-        タイトル
+        宿泊施設名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
       <%# /旅行タイトル %>
 
       
- <%# 観光の詳細%>
+  <%# 宿の詳細%>
      
-      <%# 観光スポットの画像 %>
+      <%# 宿の画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         画像
@@ -44,31 +40,40 @@
         <%# <div id="image-list"></div> %>
       </div>
     </div>
+
 <%#プレビュー%>
-    <%# <% @triptweet.images.each do |image| %> 
+    <%# <% @hoteltweet.images.each do |image| %>
   <%# <%= image_tag image, class: 'images' %> 
 <%# <% end %> 
-    <%# /観光スポットの画像 %>
+    <%# /宿の画像 %>
 
-<%# 観光スポットの動画 %>
+<%# 宿の動画 %>
 
     <%# <div class="field">
     <%= f.label :video %>
      <%# <%= f.file_field :video, :accept => 'video/*' %> 
- <%# </div>  %>
-<%# /観光スポットの動画 %>
-   
-    <%# 観光曜日%>  
+   <%# </div>    %>
+
+         
+   <%# 宿泊日数%>  
          <div class="weight-bold-text">
-          観光した曜日
+          滞在日数
+         
+        </div>
+        <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    <%# /宿泊日数%>  
+      
+       <%# 宿泊曜日%>  
+         <div class="weight-bold-text">
+          宿泊開始の曜日
          
         </div>
         <%= f.collection_select(:week_id, Week.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-    <%# /観光曜日%>  
-      
-       <%# 観光スポットの場所%>  
+    <%# /宿泊曜日%>  
+
+       <%# 宿の場所%>  
  <div class="hotel-detail">
-      <div class="weight-bold-text">旅行の詳細</div>
+      <div class="weight-bold-text">宿の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           都道府県
@@ -82,12 +87,12 @@
         <%= f.text_area :local, class:"hotel-area", id:"item-name", placeholder:"地域（必須 40文字まで)", maxlength:"40" %>
       </div>
     </div>
-   <%# /観光スポットの場所%>  
+   <%# /宿の場所%>  
      
-     <%# 観光スポットの料金%>  
+     <%# 宿の料金%>  
      <div class="sell-price">
       <div class="weight-bold-text question-text">
-        <span>料金</span>
+        <span>宿の料金</span>
         <a class="question" href="#">?</a>
       </div>
       <div>
@@ -107,7 +112,7 @@
         <span class="sell-yen">¥</span>
         <%= f.text_area :discount, class:"hotel-area", id:"item-name", placeholder:"例）5000", maxlength:"40" %>
         <span class="sell-yen"></span>
-     <%# 観光スポットの料金%>  
+     <%# 宿の料金%>  
 
 
       <%# コロナ対策 %>  
@@ -119,40 +124,21 @@
         </div>
         <%= f.collection_select(:crowd_id, Crowd.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
-          コロナ対策 
+          宿のコロナ対策 
         </div>
         <%= f.text_area :corona_measure, class:"hotel-area", id:"item-name", placeholder:" 宿でなされていたコロナ対策について（必須 40文字まで)", maxlength:"40" %>
       </div>
     </div>
-
-   <%# /コロナ対策 %>  
-   <%# 移動情報%>
-   <div class="traffc-detail">
-      <div class="weight-bold-text">施設のコロナ対策</div>
-      <div class="form">
-        <div class="weight-bold-text">
-        移動手段と時間
-        </div>
-       <%= f.text_area :traffic, class:"hotel-area", id:"item-name", placeholder:"移動について自由記載 例）・新幹線:東京駅〜大阪駅(〇〇時間)・徒歩:大阪駅〜目的地〇〇に到着(〇〇分)。", maxlength:"40" %>
-        <div class="weight-bold-text">
-
-        </div>
-       <div class="price-content">
-          <div class="price-text">
-            <span>交通費</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :fare, class:"price-input", id:"item-price", placeholder:"例）2000" %>
-        </div>
-      </div>
-    </div>
-
-    
-    <%# /移動情報%>
-    <%# /観光の詳細%>
+   <%# コロナ対策 %>  
      
+     <%# 旅行サイト %>  
+      <div class="weight-bold-text">
+          利用した旅行サイト
+        </div>
+        <%= f.collection_select(:agency_id, Agency.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+   <%# /旅行サイト %>  
 
-      <%# 観光スポットの説明 %>
+      <%# 宿の説明 %>
       <div class="items-explain">
         <div class="weight-bold-text">
           キャプション記入
@@ -161,13 +147,16 @@
         <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"宿の説明 自由（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /観光スポットの説明 %>
+    <%# /宿の説明 %>
+  <%# /宿の情報 %>
+    
 
 
-    
- <%# /観光の情報 %>   
-    
-   
+
+
+
+
+
     <%# 注意書き %>
     <%# <div class="caution">
       <p class="sentence">
