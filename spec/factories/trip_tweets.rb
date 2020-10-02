@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :trip_tweet do
-        image {Faker::Lorem.sentence}
+        images {Faker::Lorem.sentence}
         title {Faker::Lorem.sentence}
         text {Faker::Lorem.sentence}
         local {Faker::Lorem.sentence}
