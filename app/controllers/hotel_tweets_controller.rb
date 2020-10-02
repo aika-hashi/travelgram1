@@ -47,7 +47,7 @@ end
 def update
   @hoteltweet = HotelTweet.find(params[:id])
   if @hoteltweet.update(hoteltweet_params)
-    redirect_to hoteltweet_path(@hoteltweet)
+    redirect_to hotel_tweet_path(@hoteltweet)
   else
     render :edit
   end

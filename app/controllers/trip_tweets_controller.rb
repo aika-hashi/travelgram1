@@ -28,7 +28,7 @@ class TripTweetsController < ApplicationController
   def update
     @triptweet = TripTweet.find(params[:id])
     if @triptweet.update(triptweet_params)
-      redirect_to triptweet_path(@triptweet)
+      redirect_to trip_tweet_path(@triptweet)
     else
       render :edit
     end
