@@ -12,6 +12,36 @@ class TripTweetsController < ApplicationController
   
     end
   end
+
+  def show
+    @triptweet = TripTweet.find(params[:id])
+    @triptweets = TripTweet.all.includes(:user)
+    # @comment = TripComment.new
+    # @comments = @trip.trip_comments.includes(:user)
+  end
+
+  def edit
+    @triptweet = TripTweet.find(params[:id])
+  
+  end
+  
+  def update
+    @triptweet = TripTweet.find(params[:id])
+    if @triptweet.update(triptweet_params)
+      redirect_to triptweet_path(@triptweet)
+    else
+      render :edit
+    end
+  end
+   
+   
+  
+  def destroy
+    @triptweet = TripTweet.find(params[:id])
+    if @triptweet.destroy
+      redirect_to root_path
+    end
+  end
  
   private
  

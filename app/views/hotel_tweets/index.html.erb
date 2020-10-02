@@ -123,9 +123,11 @@
          <%# </div> %>
 
  <%#画１枚枚の時%>
+ <%= link_to  hotel_tweet_path(hoteltweet.id) do %>
  <div > 
  <%=image_tag hoteltweet.image ,class:'item-img-content'%> 
 </div> 
+<%end%>
 
          <%# <p>
           <strong>Video:</strong>
@@ -181,9 +183,11 @@
          <%# </div> %> 
 
          <%#画１枚の時%>
+  <%= link_to  trip_tweet_path(triptweet.id) do %>
  <div > 
  <%=image_tag triptweet.image ,class:'item-img-content'%> 
 </div> 
+ <% end %>
 
         <%# <p>
           <strong>Video:</strong>
