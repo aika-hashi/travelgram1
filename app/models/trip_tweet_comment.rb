@@ -1,4 +1,4 @@
 class TripTweetComment < ApplicationRecord
-  belongs_to :triptweet  # triptweetsテーブルとのアソシエーション
+  belongs_to :trip_tweet  # trip_tweetsテーブルとのアソシエーション
   belongs_to :user  # usersテーブルとのアソシエーション
 end

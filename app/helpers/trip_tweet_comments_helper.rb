@@ -1,0 +1,2 @@
+module TripTweetCommentsHelper
+end

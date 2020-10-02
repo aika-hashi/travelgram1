@@ -66,6 +66,10 @@
           <th class="detail-item">宿のコロナ対策</th>
           <td class="detail-value"><%= @hoteltweet.corona_measure%></td>
         </tr>
+        <tr>
+          <th class="detail-item">利用した旅行サイト</th>
+          <td class="detail-value"><%= @hoteltweet.agency.name%></td>
+        </tr>
         <%# <tr> %>
         <%#ブックマーク%>
           <%# <% if @tweet.bookmark_by?(current_user) %> 
@@ -122,11 +126,32 @@
   </div>
 
 <%#追加コメント%>
+<div class="container">
+    <% if current_user %>
+      <%= form_with(model: [@hoteltweet, @hoteltweetcomment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @hoteltweetcomments %>
+        <% @hoteltweetcomments.each do |hoteltweetcomment| %>
+          <p>
+            <strong><%= link_to hoteltweetcomment.user.nickname, "#" %>：</strong>
+            <%= hoteltweetcomment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
   
  
     
   
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  
 </div>
 
 <%= render "shared/footer" %>

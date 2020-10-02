@@ -110,6 +110,30 @@
   </div>
  
  <%#追加コメント%>
+<div class="container">
+    <% if current_user %>
+      <%= form_with(model: [@triptweet, @triptweetcomment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @triptweetcomments %>
+        <% @triptweetcomments.each do |triptweetcomment| %>
+          <p>
+            <strong><%= link_to triptweetcomment.user.nickname,  "/users/#{triptweetcomment.user_id}" %>：</strong>
+            <%= triptweetcomment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  
+
+
   
   
   <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
