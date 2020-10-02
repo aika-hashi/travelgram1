@@ -106,19 +106,26 @@
             <%= hoteltweet.title %>
           </h3>
            <div class='item-name'>
-            <%= hoteltweet.area.name%>    <%= hoteltweet.local%>         
+            <%= hoteltweet.area.name%>   地域 <%= hoteltweet.local%>         
           </div>
           
              <div class='item-name'>
             <%= "宿泊施設"%>
            </div> 
-        <div class='item-img-content'>
-        <% hoteltweet.image.each do |image| %>
-         <%= link_to  hoteltweet_path(hoteltweet.id) do %>
-          <%= image_tag image ,class: 'images'   %>
-        <% end %>
-        <% end %>
-         </div>
+
+           <%#画像複数枚の時%>
+        <%# <div class='item-img-content'> %>
+        <%# <% hoteltweet.images.each do |image| %>
+         <%# <%= link_to  hoteltweet_path(hoteltweet.id) do %> 
+          <%# <%= image_tag image ,class: 'images'   %> 
+        <%# <% end %>
+        <%# <% end %> 
+         <%# </div> %>
+
+ <%#画１枚枚の時%>
+ <div > 
+ <%=image_tag hoteltweet.image ,class:'item-img-content'%> 
+</div> 
 
          <%# <p>
           <strong>Video:</strong>
@@ -154,23 +161,29 @@
     <li class='list'>
       <div class='item-info'>
           <h3 class='item-name'>
-            <%= trip.title %>
+            <%= triptweet.title %>
           </h3>
            <div class='item-name'>
-            <%= triptweet.area.name%>    <%= triptweet.local%>         
+            <%= triptweet.area.name%>    地域<%= triptweet.local%>         
           </div>
           
-             <div class='item-name'>
+          <%#画複数枚の時%>
+             <%# <div class='item-name'>
             <%= "観光スポット"%>
-           </div> 
-        <div class='item-img-content'>
-        <% triptweet.image.each do |image| %>
-        <%= link_to  triptweet_path(triptweet.id) do %>
+           <%# </div>  %>
+        <%# <div class='item-img-content'> %>
+        <%# <% triptweet.images.each do |image| %> 
+        <%# <%= link_to  triptweet_path(triptweet.id) do %> 
 
-          <%= image_tag image ,class: 'images'   %>
-        <% end %>
-        <% end %>
-         </div>
+          <%# <%= image_tag image ,class: 'images'   %> 
+        <%# <% end %> 
+        <%# <% end %> 
+         <%# </div> %> 
+
+         <%#画１枚の時%>
+ <div > 
+ <%=image_tag triptweet.image ,class:'item-img-content'%> 
+</div> 
 
         <%# <p>
           <strong>Video:</strong>
