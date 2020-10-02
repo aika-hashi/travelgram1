@@ -11,6 +11,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @hoteltweets = HotelTweet.all.order("created_at DESC")
+    @triptweets = TripTweet.all.order("created_at DESC")
+  
+    # @hoteltweet = HotelTweet.find(params[:id])
+    # @triptweet = TripTweet.find(params[:id])
+    
+    #  if user_signed_in? 
+    #   redirect_to user_path(current_user.id)
+    # else
+    #   render root_path
+    # end    
+  
+  end
+  
+
   private
 
   def user_params

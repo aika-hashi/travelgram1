@@ -1,0 +1,19 @@
+<%# <%  if current_user.id == (@tweet.user.id || @trip.user.id)%> 
+    <%= link_to 'プロフィールの編集',  '#', method: :get, class: "item-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to 'ログアウト', '#', method: :delete, class:'item-destroy' %>
+    <%= link_to '削除', '#', method: :delete, class:'item-destroy' %>
+  
+  <%# <% end %> 
+     
+    
+
+    <%# <%else %>
+
+    
+  <%# <% if current_user.following?(@user) %> 
+    <%# <%= link_to 'フォロー外す', tweet_user_path(@tweet.user.id) || trip_user_path(@trip.user.id), method: :delete %> 
+  <%# <% else %> 
+    <%# <%= link_to 'フォローする', tweet_user_path(@tweet.user.id) || trip_user_path(@trip.user.id), method: :POST %> 
+  <%# <% end %> 
+<%# <% end %> 

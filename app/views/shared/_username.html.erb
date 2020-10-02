@@ -1,0 +1,26 @@
+<header class='top-page-header'>
+  
+  
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("plane2-logo.png", class:"furima-icon"), "/" %>
+    
+   
+  
+  <div class='nav'>
+   
+    <ul class='lists-right'>
+      <%# <% if user_signed_in? && current_user.id == @user.id%> <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+    <% if  %>
+       <%# <li><%= link_to @tweet.user.image, user_path(current_user.id), class: "user-image"  %>
+       <%# <li><%= link_to @tweet.user.nickname, user_path(current_user.id), class: "user-nickname"  %>
+       <li><%= link_to 'ログアウト',destroy_user_session_path , method: :delete, class: "logout"  %></li>
+     <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path , class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+      <%# <li><%= link_to '宿泊施設お気に入り一覧', tweet_bookmarks_path(tweet_url), class: "bookmark" %>
+      <%# <li><%= link_to '観光スポットお気に入り一覧',  trip_bookmark_trips_path(trip_url), class: "bookmark_trip" %>
+    </ul>
+  </div>
+</header>
