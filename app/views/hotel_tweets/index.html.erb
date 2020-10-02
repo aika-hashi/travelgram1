@@ -51,4 +51,177 @@
 
 <%# 検索%>
 
+<%# 宿泊施設・観光スポット検索欄%>
+<span class= 'search-btn'>検索</span>
+<%= search_form_for @search do |f| %>
+  <%= f.label :title_cont, '宿泊施設・観光スポット名' %>
+  <%= f.search_field :title_cont %>
+
+
+
+
+<%=f.label :area_id_eq,'都道府県'%>
+<%= f.collection_select :area_id_eq, Area.all,:id,:name, include_blank: '指定なし' %>
+  
+  
+
+
+
+ <%= f.label :local_cont, '地域' %>
+  <%= f.search_field :local_cont %>
+
+  
+  
+  
+  <%= f.label :price %>
+  <%= f.radio_button :price_lteq, '' %>指定なし
+  <%= f.radio_button :price_lteq, '5000' %>5000円以下
+  <%= f.radio_button :price_lteq, '7500' %>7500円以下
+  <%= f.radio_button :price_lteq, '10000' %>10000円以下
+
+<%= f.submit '検索' %>
+
+<% end %>
+  
+
+<%# /宿泊施設・観光スポット検索欄%>
+
+
+
+
+ 
+<%# 投稿一覧 %>
+  <%# 宿泊施設投稿一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>旅行の投稿一覧</h2>
+     
+    
+   <ul class='item-lists'>
+      
+      <% @tweet.each do |tweet| %>
+    
+    <li class='list'>
+      <div class='item-info'>
+          <h3 class='item-name'>
+            <%= tweet.title %>
+          </h3>
+           <div class='item-name'>
+            <%= tweet.area.name%>    <%= tweet.local%>         
+          </div>
+          
+             <div class='item-name'>
+            <%= "宿泊施設"%>
+           </div> 
+        <div class='item-img-content'>
+        <% tweet.images.each do |image| %>
+         <%= link_to  tweet_path(tweet.id) do %>
+          <%= image_tag image ,class: 'images'   %>
+        <% end %>
+        <% end %>
+         </div>
+
+         <p>
+          <strong>Video:</strong>
+        </p>
+         <%# <p>
+       <%= link_to tweet.video_url.to_s do %>
+      <%# <%= image_tag(tweet.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
+   <%# <% end %> 
+<%# </p>   %>
+
+       
+        <div class='item-info'>
+          
+          <div class='item-price'>
+            <span><%= tweet.price %>円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+      </li>
+       <% end %>
+        
+        <%# /宿泊施設投稿一覧 %>
+  
+
+  <%# 観光スポット投稿一覧 %>
+    <ul class='item-lists'>
+      
+      <% @trip.each do |trip| %>
+    
+    <li class='list'>
+      <div class='item-info'>
+          <h3 class='item-name'>
+            <%= trip.title %>
+          </h3>
+           <div class='item-name'>
+            <%= trip.area.name%>    <%= trip.local%>         
+          </div>
+          
+             <div class='item-name'>
+            <%= "観光スポット"%>
+           </div> 
+        <div class='item-img-content'>
+        <% trip.images.each do |image| %>
+        <%= link_to  trip_path(trip.id) do %>
+
+          <%= image_tag image ,class: 'images'   %>
+        <% end %>
+        <% end %>
+         </div>
+
+        <p>
+          <strong>Video:</strong>
+        </p>
+         <%# <p>
+       <%= link_to trip.video_url.to_s do %>
+      <%# <%= image_tag(trip.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %> 
+       <%# <% end %> 
+        <%# </p>  %>
+
+       
+        <div class='item-info'>
+          
+          <div class='item-price'>
+            <span><%= trip.price %>円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+      </li>
+       <% end %>
+
+      <%# お気に入り %>
+      
+       <%# <div class="row d-flex">
+  <%= render @tweets %>
+<%# </div>  %>
+     <%# /お気に入り %>
+
+    
+       <%# /観光スポット投稿一覧 %>
+        
+
+      
+      
+
+     
+  <%# /投稿一覧 %>
+
+ 
+
+
+
+
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>投稿する</span>
+  <a href="/trips">
+    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </a>
+</div>
+<%# <%= render "shared/footer" %> 
 
