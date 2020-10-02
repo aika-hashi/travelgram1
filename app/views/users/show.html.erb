@@ -1,0 +1,33 @@
+<%= render "shared/username" %>
+<%= render "shared/follow" %>
+
+
+
+ 
+        <div class='my-img'>
+
+<div class='my-img-content'>
+
+        <% @hoteltweets.each do |hoteltweet| %>
+        <% if hoteltweet.user_id  %>
+        <% hoteltweet.images.each do |image| %>
+          
+          <%= link_to image_tag(image), hotel_tweet_path(hoteltweet.id),class:'myimages'    %>
+        <% end %>
+          <% end %> 
+         <% end %>
+         
+         </div>
+         
+         <div class='my-img-content'>
+         
+         <% @triptweets.each do |triptweet| %>
+         <% if triptweet.user_id %>
+        <% triptweet.images.each do |image| %>
+          <%= link_to image_tag(image), trip_tweet_path(triptweet.id),class:'myimages'    %>
+        <% end %>
+          <% end %> 
+         <% end %>
+         </div>
+          </div>
+          
