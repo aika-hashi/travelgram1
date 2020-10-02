@@ -33,8 +33,8 @@ end
 def show
   @hoteltweet = HotelTweet.find(params[:id])
   @hoteltweets = HotelTweet.all.includes(:user)
-  # @comment = Comment.new
-  # @comments = @tweet.comments.includes(:user)
+  @hoteltweetcomment = HotelTweetComment.new
+  @hoteltweetcomments = @hoteltweet.hotel_tweet_comments.includes(:user)
   # @trip = Trip.find(params[:id])
 end
 

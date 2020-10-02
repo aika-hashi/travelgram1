@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
          has_many :hotel_tweets
          has_many :trip_tweets
+         has_many :hotel_tweet_comments
+         has_many :trip_tweet_comments
 
 
          validates :nickname,:email,:password,:password_confirmation,:firstname, :familyname, :firstname_kana, :familyname_kana, :date,presence: true

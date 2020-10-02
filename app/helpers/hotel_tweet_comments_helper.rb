@@ -1,0 +1,2 @@
+module HotelTweetCommentsHelper
+end

@@ -16,8 +16,8 @@ class TripTweetsController < ApplicationController
   def show
     @triptweet = TripTweet.find(params[:id])
     @triptweets = TripTweet.all.includes(:user)
-    # @comment = TripComment.new
-    # @comments = @trip.trip_comments.includes(:user)
+    @triptweetcomment = TripTweetComment.new
+    @triptweetcomments = @triptweet.trip_tweet_comments.includes(:user)
   end
 
   def edit
