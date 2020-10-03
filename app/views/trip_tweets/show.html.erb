@@ -58,14 +58,14 @@
           <th class="detail-item">交通費</th>
           <td class="detail-value"><%= @triptweet.fare%></td>
         </tr>
-        <%# <tr> %>
-        <%#ブックマーク%>
-          <%# <% if @tweet.bookmark_by?(current_user) %> 
-      <%# <td><%= link_to "お気に入りを外す", tweet_bookmarks_path(@tweet), method: :delete %>
-    <%# <% else %> 
-      <%# <td><%= link_to "お気に入り",tweet_bookmarks_path(@tweet), method: :post %>
-    <%# <% end %> 
-        <%# </tr> %>
+       <%#ブックマーク%>
+        <tr> 
+           <% if @triptweet.bookmark_by?(current_user) %> 
+       <td><%= link_to "お気に入りを外す",   trip_tweet_trip_bookmarks_path(@triptweet), method: :delete %>
+     <% else %> 
+       <td><%= link_to "お気に入り",  trip_tweet_trip_bookmarks_path(@triptweet), method: :post %>
+    <% end %> 
+         </tr> 
       </tbody>
     </table>
     

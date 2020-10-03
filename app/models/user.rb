@@ -13,7 +13,7 @@ class User < ApplicationRecord
          has_many :hotel_bookmarks, dependent: :destroy
          has_many :bookmark_hotel_tweets, through: :hotel_bookmarks, source: :hotel_tweet
 
-         as_many :trip_tweets, dependent: :destroy
+         has_many :trip_tweets, dependent: :destroy
          has_many :trip_bookmarks, dependent: :destroy
          has_many :bookmark_trip_tweets, through: :trip_bookmarks, source: :trip_tweet
 
