@@ -65,6 +65,7 @@
      <% else %> 
        <td><%= link_to "お気に入り",  trip_tweet_trip_bookmarks_path(@triptweet), method: :post %>
     <% end %> 
+     <%# お気に入り数： <%= current_user.trip_bookmarks.count %> 
          </tr> 
       </tbody>
     </table>
