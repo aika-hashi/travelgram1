@@ -9,9 +9,16 @@ class User < ApplicationRecord
          has_many :hotel_tweet_comments
          has_many :trip_tweet_comments
 
+         has_many :hotel_tweets, dependent: :destroy
+         has_many :hotel_bookmarks, dependent: :destroy
+         has_many :bookmark_hotel_tweets, through: :hotel_bookmarks, source: :hotel_tweet
 
+         has_many :trip_tweets, dependent: :destroy
+         has_many :trip_bookmarks, dependent: :destroy
+         has_many :bookmark_trip_tweets, through: :trip_bookmarks, source: :trip_tweet
+
+        
          validates :nickname,:email,:password,:password_confirmation,:firstname, :familyname, :firstname_kana, :familyname_kana, :date,presence: true
-
 
          with_options presence: true do
           validates :firstname, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}

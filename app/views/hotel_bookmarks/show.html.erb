@@ -1,0 +1,36 @@
+<table>
+  <caption>宿泊施設お気に入り一覧</caption>
+  <div>
+  <tbody>
+  
+    <% @hotelbookmark.each do |hotelbookmark| %>
+      <tr>
+        <td><%= hotelbookmark.hotel_tweet.user.nickname %></td>
+        <td>
+          <%= link_to hotel_tweet_path(hotelbookmark.hotel_tweet) do %>
+            <%= hotelbookmark.hotel_tweet.title %>
+            </td>
+            <% end %>
+             <td> 
+            <% hotelbookmark.hotel_tweet.images.each do |image| %>
+             <%= link_to hotel_tweet_path(hotelbookmark.hotel_tweet) do %>
+          <%= image_tag image ,class: 'images'   %> </td>
+         <% end %>
+          <% end %>
+        
+         
+        <% end %>
+      </tr>
+        
+      <td><%=link_to 'もどる', user_path(current_user.id), class:"back-btn" %></td>
+      
+
+      
+
+       
+    
+    
+  </tbody>
+</table>
+ 
+
