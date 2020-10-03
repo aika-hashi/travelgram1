@@ -1,0 +1,2 @@
+class HotelRelationship < ApplicationRecord
+end
