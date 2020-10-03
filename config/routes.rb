@@ -23,6 +23,11 @@ Rails.application.routes.draw do
     resource :trip_bookmarks, only: [:create, :destroy,:show]
   end
 
+  resources :users do
+    resource :relationships, only: [:create, :destroy,:show]
+  end
+  
+
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
