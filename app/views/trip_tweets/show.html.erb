@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <%#観光スポット%>
-  <div class="detail-value"><%=link_to @triptweet.user.nickname, "#"%> </div>
+  <div class="detail-value"><%=link_to @triptweet.user.nickname, user_path(@triptweet.user.id)%> </div>
         <%# <div class='item-img-content'>
       <%= image_tag @user.image ,class:"item-box-img" </div>  
    %>
