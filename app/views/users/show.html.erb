@@ -1,3 +1,5 @@
+<%= render "shared/header" %>
+
 <%= render "shared/username" %>
 <%= render "shared/follow" %>
 
@@ -9,7 +11,7 @@
 <div class='my-img-content'>
 
         <% @hoteltweets.each do |hoteltweet| %>
-        <% if hoteltweet.user_id == current_user.id  %>
+        <% if hoteltweet.user_id == @user.id  %>
         <% hoteltweet.images.each do |image| %>
           
           <%= link_to image_tag(image), hotel_tweet_path(hoteltweet.id),class:'myimages'    %>
@@ -22,7 +24,7 @@
          <div class='my-img-content'>
          
          <% @triptweets.each do |triptweet| %>
-         <% if triptweet.user_id == current_user.id %>
+         <% if triptweet.user_id == @user.id %>
         <% triptweet.images.each do |image| %>
           <%= link_to image_tag(image), trip_tweet_path(triptweet.id),class:'myimages'    %>
         <% end %>

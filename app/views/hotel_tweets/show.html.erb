@@ -11,7 +11,7 @@
 
 
   <%#宿泊施設%>
-<div class="detail-value"><%=link_to @hoteltweet.user.nickname, "#"%> </div>
+<div class="detail-value"><%=link_to @hoteltweet.user.nickname, user_path(@hoteltweet.user.id)%> </div>
         <%# <div class='item-img-content'>
       <%= image_tag @user.image ,class:"item-box-img" %> 
   

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
     @hoteltweet = HotelTweet.find(params[:id])
     @triptweet = TripTweet.find(params[:id])
     
+    @user = User.find(params[:id])
     #  if user_signed_in? 
     #   redirect_to user_path(current_user.id)
     # else
