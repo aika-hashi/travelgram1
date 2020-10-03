@@ -1,2 +1,0 @@
-class TripRelationship < ApplicationRecord
-end
