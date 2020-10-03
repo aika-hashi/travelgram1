@@ -17,6 +17,26 @@ class User < ApplicationRecord
          has_many :trip_bookmarks, dependent: :destroy
          has_many :bookmark_trip_tweets, through: :trip_bookmarks, source: :trip_tweet
 
+         has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォロー取得
+         has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得
+         has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
+         has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
+
+  # ユーザーをフォローする、後ほどcontrollerで使用します。
+  def follow(user_id)
+    follower.create(followed_id: user_id)
+  end
+
+  # ユーザーのフォローを外す、後ほどcontrollerで使用します。
+  def unfollow(user_id)
+    follower.find_by(followed_id: user_id).destroy
+  end
+
+  # フォローしていればtrueを返す、後ほどviewで使用します。
+  def following?(user)
+    following_user.include?(user)
+  end
+
         
          validates :nickname,:email,:password,:password_confirmation,:firstname, :familyname, :firstname_kana, :familyname_kana, :date,presence: true
 
