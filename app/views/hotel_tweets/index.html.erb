@@ -117,7 +117,21 @@
          <div class='item-img-content'> 
          <% hoteltweet.images.each do |image| %>
          <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
-           <%= image_tag image ,class: 'images'   %> 
+            <%= image_tag image ,class: 'images'   %>  
+           <%# <div style="border:solid 1px; height:125px; width:300px; overflow:auto; white-space:nowrap;">
+
+<img src="画像パス" alt="画像01" width="80" height="100">
+<img src="画像パス" alt="画像02" width="80" height="100">
+<img src="画像パス" alt="画像03" width="80" height="100">
+<img src="画像パス" alt="画像04" width="80" height="100">
+<img src="画像パス" alt="画像05" width="80" height="100">
+<img src="画像パス" alt="画像06" width="80" height="100">
+<img src="画像パス" alt="画像07" width="80" height="100">
+<img src="画像パス" alt="画像08" width="80" height="100">
+<img src="画像パス" alt="画像09" width="80" height="100">
+<img src="画像パス" alt="画像10" width="80" height="100">
+
+</div> %>
          <% end %>
          <% end %> 
           </div> 
