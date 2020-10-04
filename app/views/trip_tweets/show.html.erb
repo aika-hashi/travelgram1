@@ -58,26 +58,24 @@
           <th class="detail-item">交通費</th>
           <td class="detail-value"><%= @triptweet.fare%></td>
         </tr>
+       <%#ブックマーク%>
+        <tr> 
+           <% if @triptweet.bookmark_by?(current_user) %> 
+       <td><%= link_to "お気に入りを外す",   trip_tweet_trip_bookmarks_path(@triptweet), method: :delete %>
+     <% else %> 
+       <td><%= link_to "お気に入り",  trip_tweet_trip_bookmarks_path(@triptweet), method: :post %>
+    <% end %> 
+    お気に入り数： <%= @triptweet.trip_bookmarks.count %> 
+         </tr> 
       </tbody>
     </table>
     
-    <%#ブックマーク%>
+    
     <div class="option">
       <div class="favorite-btn">
-           <% if @triptweet.bookmark_by?(current_user) %> 
-       <td><%= link_to "お気に入り",   trip_tweet_trip_bookmarks_path(@triptweet), method: :delete %><%= @triptweet.trip_bookmarks.count %> 
-     <% else %> 
-       <td><%= link_to "お気に入り",  trip_tweet_trip_bookmarks_path(@triptweet), method: :post %><%= @triptweet.trip_bookmarks.count %> 
-    <% end %> 
-     
-        </div>
-    </div>
-    
-    <%# <div class="option">
-      <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <%# <span>お気に入り 0</span> %>
-      <%# </div>easure %> 
+        <span>お気に入り 0</span>
+      </div>easure
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
         <span>不適切な投稿の通報</span>
