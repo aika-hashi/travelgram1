@@ -33,9 +33,14 @@ a {
 }
 
 .store-btn {
-  display: flex;align-items: center;
-  justify-content: center;
-  margin-top: 24px;
+  display: flex;
+  margin-top: 300px;
+  
+}
+
+.store1-btn{
+  margin-top: 400px;
+  margin-right: 150px;
   
 }
 
@@ -239,12 +244,127 @@ a {
 
 /* //FURIMAの特徴 */
 
+/* 地図の吹き出し */
+.balloon5 {
+  width: 100%;
+  margin-left: 350px;
+  margin-top: 200px;
+  overflow: hidden;
+}
+
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+}
+
+.balloon5 .faceicon img{
+  width: 100%;
+  height: auto;
+  border: solid 3px #d7ebfe;
+  border-radius: 50%;
+}
+
+.balloon5 .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #d7ebfe;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+/* //地図の吹き出し */
+
+/* 地図検索の吹き出し */
+.balloon1-top {
+  position: relative;
+  display: inline-block;
+  margin-left: 500px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon1-top:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #e0edff;
+}
+
+.balloon1-top p {
+  margin: 0;
+  padding: 0;
+}
+/* //地図検索の吹き出し */
+
+
 /* 検索 */
-
-
+.search-btn{
+  margin-left:170px ;
+}
 
 
 /* //検索 */
+
+/* 検索の吹き出し */
+.balloon2 {
+  position: relative;
+  display: inline-block;
+  margin: 10px 120px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon2:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+.balloon2 p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* //検索の吹き出し */
 
 
 /* 投稿一覧 */
@@ -291,6 +411,8 @@ a {
 .item-img-content {
   position: relative;right:200px
 }
+
+
 
 .images {
   width: 100vh;
