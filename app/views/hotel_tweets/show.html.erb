@@ -11,13 +11,13 @@
 
 
   <%#宿泊施設%>
-<div class="detail-value">投稿者：<%=link_to @hoteltweet.user.nickname, user_path(@hoteltweet.user.id)%> </div>
+<div class="detail-value"><%=link_to @hoteltweet.user.nickname, user_path(@hoteltweet.user.id)%> </div>
         <%# <div class='item-img-content'>
       <%= image_tag @user.image ,class:"item-box-img" %> 
   
   
     <h2 class="name">
-      宿泊施設名：<%= @hoteltweet.title %>
+      <%= @hoteltweet.title %>
     </h2>
     <%#画像複数枚%>
        <div class='travel-img-content'> 
@@ -27,9 +27,9 @@
     <%#画像1枚%>
     <%# <%= image_tag @hoteltweet.image ,class:"item-box-img" %> 
     
-<div class="detail-value">
+
       <span><%= @hoteltweet.text %></span>
-   </div>
+   
    
    
     <table class="detail-table">
