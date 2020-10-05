@@ -153,10 +153,16 @@
           
           <div class='item-price'>
             <span><%= hoteltweet.price %>円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
+             <div class="option">
+      <div class="favorite-btn">
+           <% if hoteltweet.bookmark_by?(current_user) %> 
+       <td><%= link_to "お気に入り",   hotel_tweet_hotel_bookmarks_path(hoteltweet), method: :delete %><%= hoteltweet.hotel_bookmarks.count %> </td>
+     <% else %> 
+       <td><%= link_to "お気に入り",  hotel_tweet_hotel_bookmarks_path(hoteltweet), method: :post %><%= hoteltweet.hotel_bookmarks.count %> </td>
+    <% end %> 
+</div>
+</div>
+     
           </div>
         </div>
       </li>
@@ -219,10 +225,16 @@
           
           <div class='item-price'>
             <span><%= triptweet.price %>円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
+             <div class="option">
+      <div class="favorite-btn">
+           <% if triptweet.bookmark_by?(current_user) %> 
+       <td><%= link_to "お気に入り",   trip_tweet_trip_bookmarks_path(triptweet), method: :delete %><%= triptweet.trip_bookmarks.count %> </td>
+     <% else %> 
+       <td><%= link_to "お気に入り",  trip_tweet_trip_bookmarks_path(triptweet), method: :post %><%= triptweet.trip_bookmarks.count %> </td>
+    <% end %> 
+</div>
+</div>
+     
           </div>
         </div>
       </li>
