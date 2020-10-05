@@ -14,9 +14,16 @@
     旅行専用投稿アプリ
     </p>
     <div class='store-btn'>
+    <div>
       <%= link_to image_tag("jaran.png", class:"jalan-btn"), "https://www.jalan.net/" %>
       <%= link_to image_tag("yahoo.png", class:"yahoo-btn"), "https://travel.yahoo.co.jp/" %>
-       <%= link_to image_tag("rurubu.png", class:"his-btn"), "https://www.rurubu.travel/?utm_medium=cpc&utm_source=google&utm_campaign=google_rurubu-htl_02-brandplus&utm_content=rurubutop__txt_rsa-1_&cid=1835687&gclid=CjwKCAjw-5v7BRAmEiwAJ3DpuLemL4PcnvfCuYZAL5oo2x4LsV0sh1xQAudTeK4fzejRd6v3Q4qc8hoCrHAQAvD_BwE" %>
+       <%= link_to image_tag("rurubu.png", class:"rurubu-btn"), "https://www.rurubu.travel/?utm_medium=cpc&utm_source=google&utm_campaign=google_rurubu-htl_02-brandplus&utm_content=rurubutop__txt_rsa-1_&cid=1835687&gclid=CjwKCAjw-5v7BRAmEiwAJ3DpuLemL4PcnvfCuYZAL5oo2x4LsV0sh1xQAudTeK4fzejRd6v3Q4qc8hoCrHAQAvD_BwE" %>
+       </div>
+       <div>
+       <%= link_to image_tag("rakuten.png", class:"rakuten-btn"), "https://travel.rakuten.co.jp/" %>
+       <%= link_to image_tag("ikkyuu.png", class:"ikkyuu-btn"), "https://www.ikyu.com/fan/about.aspx" %>
+       <%= link_to image_tag("hotelscom.png", class:"hotelscom-btn"), "https://jp.hotels.com/hoteru-otoku-joho/" %>
+    </div>
     </div>
   </div>
   <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
@@ -54,31 +61,32 @@
 <%# 宿泊施設・観光スポット検索欄%>
 <span class= 'search-btn'>検索</span>
 <%= search_form_for @search do |f| %>
+<div class='search-btn'>
   <%= f.label :title_cont, '宿泊施設・観光スポット名' %>
   <%= f.search_field :title_cont %>
+</div>
 
 
-
-
+<div class='search-btn'>
 <%=f.label :area_id_eq,'都道府県'%>
 <%= f.collection_select :area_id_eq, Area.all,:id,:name, include_blank: '指定なし' %>
+  </div>
   
-  
 
 
-
+<div class='search-btn'>
  <%= f.label :local_cont, '地域' %>
   <%= f.search_field :local_cont %>
-
+</div>
   
-  
-  
+  <div class='search-btn'>
   <%= f.label :price,'料金' %>
   <%= f.radio_button :price_lteq, '' %>指定なし
   <%= f.radio_button :price_lteq, '5000' %>5000円以下
   <%= f.radio_button :price_lteq, '7500' %>7500円以下
   <%= f.radio_button :price_lteq, '10000' %>10000円以下
-
+  <%= f.radio_button :price_lteq, '15000' %>15000円以下
+</div>
 <%= f.submit '検索' %>
 
 <% end %>
@@ -145,10 +153,16 @@
           
           <div class='item-price'>
             <span><%= hoteltweet.price %>円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
+             <div class="option">
+      <div class="favorite-btn">
+           <% if hoteltweet.bookmark_by?(current_user) %> 
+       <td><%= link_to "お気に入り",   hotel_tweet_hotel_bookmarks_path(hoteltweet), method: :delete %><%= hoteltweet.hotel_bookmarks.count %> </td>
+     <% else %> 
+       <td><%= link_to "お気に入り",  hotel_tweet_hotel_bookmarks_path(hoteltweet), method: :post %><%= hoteltweet.hotel_bookmarks.count %> </td>
+    <% end %> 
+</div>
+</div>
+     
           </div>
         </div>
       </li>
@@ -211,10 +225,16 @@
           
           <div class='item-price'>
             <span><%= triptweet.price %>円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
+             <div class="option">
+      <div class="favorite-btn">
+           <% if triptweet.bookmark_by?(current_user) %> 
+       <td><%= link_to "お気に入り",   trip_tweet_trip_bookmarks_path(triptweet), method: :delete %><%= triptweet.trip_bookmarks.count %> </td>
+     <% else %> 
+       <td><%= link_to "お気に入り",  trip_tweet_trip_bookmarks_path(triptweet), method: :post %><%= triptweet.trip_bookmarks.count %> </td>
+    <% end %> 
+</div>
+</div>
+     
           </div>
         </div>
       </li>
@@ -245,11 +265,11 @@
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>宿泊施設の投稿する</span>
   <a href=" /hotel_tweets/new">
-    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <%= image_tag 'plane.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
   <span class='purchase-btn-text'>観光スポットの投稿する</span>
   <a href=" /trip_tweets/new">
-    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <%= image_tag 'torii.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
 </div>
 <%# <%= render "shared/footer" %> 

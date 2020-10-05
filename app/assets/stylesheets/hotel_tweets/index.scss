@@ -3,13 +3,14 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  background:white;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('travel-header02.png');
+  height: 100vh;
+  background-image: image-url('travel-header05.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -33,18 +34,43 @@ a {
 
 .store-btn {
   display: flex;align-items: center;
+  justify-content: center;
   margin-top: 24px;
+  
 }
 
-.apple-btn {
+.jalan-btn {
   margin-right: 1vw;
   height: 9vh;
+  width: 9vh;
 }
 
-.google-btn {
+.yahoo-btn {
   height: 9vh;
+  width: 15vh;
 }
 
+.rurubu-btn {
+  margin-right: 1vw;
+  height: 9vh;
+  width: 9vh;
+}
+
+.rakuten-btn {
+  height: 9vh;
+  width: 9vh;
+}
+
+.ikkyuu-btn {
+  margin-right: 1vw;
+  height: 9vh;
+  width: 9vh;
+}
+
+.hotelscom-btn {
+  height: 9vh;
+  width: 20vh;
+}
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
 
 /* FURIMAが選ばれる3つの理由部分 */
@@ -213,7 +239,15 @@ a {
 
 /* //FURIMAの特徴 */
 
-/* 商品一覧 */
+/* 検索 */
+
+
+
+
+/* //検索 */
+
+
+/* 投稿一覧 */
 
 .item-contents {
   background-color: #FFF;
@@ -286,6 +320,7 @@ a {
 .star-btn {
   display: flex;
   align-items: center;
+ 
 }
 
 .star-icon {
@@ -298,4 +333,4 @@ a {
   font-size: 2vh;
 }
 
-/* //商品一覧 */
+/* //投稿一覧 */
