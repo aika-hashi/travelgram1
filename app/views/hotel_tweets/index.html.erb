@@ -73,7 +73,7 @@
   
   
   
-  <%= f.label :price %>
+  <%= f.label :price,'料金' %>
   <%= f.radio_button :price_lteq, '' %>指定なし
   <%= f.radio_button :price_lteq, '5000' %>5000円以下
   <%= f.radio_button :price_lteq, '7500' %>7500円以下
@@ -106,7 +106,9 @@
             <%= hoteltweet.title %>
           </h3>
            <div class='item-name'>
-            <%= hoteltweet.area.name%>   地域 <%= hoteltweet.local%>         
+           
+            <%= hoteltweet.area.name%>  
+             地域 <%= hoteltweet.local%>         
           </div>
           
              <div class='item-name'>
@@ -117,21 +119,7 @@
          <div class='item-img-content'> 
          <% hoteltweet.images.each do |image| %>
          <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
-            <%= image_tag image ,class: 'images'   %>  
-           <%# <div style="border:solid 1px; height:125px; width:300px; overflow:auto; white-space:nowrap;">
-
-<img src="画像パス" alt="画像01" width="80" height="100">
-<img src="画像パス" alt="画像02" width="80" height="100">
-<img src="画像パス" alt="画像03" width="80" height="100">
-<img src="画像パス" alt="画像04" width="80" height="100">
-<img src="画像パス" alt="画像05" width="80" height="100">
-<img src="画像パス" alt="画像06" width="80" height="100">
-<img src="画像パス" alt="画像07" width="80" height="100">
-<img src="画像パス" alt="画像08" width="80" height="100">
-<img src="画像パス" alt="画像09" width="80" height="100">
-<img src="画像パス" alt="画像10" width="80" height="100">
-
-</div> %>
+           <%= image_tag image ,class: 'images'   %> 
          <% end %>
          <% end %> 
           </div> 
@@ -180,7 +168,10 @@
             <%= triptweet.title %>
           </h3>
            <div class='item-name'>
-            <%= triptweet.area.name%>    地域<%= triptweet.local%>         
+            
+            <%= triptweet.area.name%>    
+            
+            地域<%= triptweet.local%>         
           </div>
 
 

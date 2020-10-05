@@ -70,19 +70,17 @@
           <th class="detail-item">利用した旅行サイト</th>
           <td class="detail-value"><%= @hoteltweet.agency.name%></td>
         </tr>
-         </tbody>
-    </table>
        <%#ブックマーク%>
-        <div class="option">
-      <div class="favorite-btn">
+        <tr> 
            <% if @hoteltweet.bookmark_by?(current_user) %> 
-       <td><%= link_to "お気に入り",   hotel_tweet_hotel_bookmarks_path(@hoteltweet), method: :delete %><%= @hoteltweet.hotel_bookmarks.count %>
+       <td><%= link_to "お気に入りを外す",   hotel_tweet_hotel_bookmarks_path(@hoteltweet), method: :delete %>
      <% else %> 
-       <td><%= link_to "お気に入り",  hotel_tweet_hotel_bookmarks_path(@hoteltweet), method: :post %><%= @hoteltweet.hotel_bookmarks.count %> 
+       <td><%= link_to "お気に入り",  hotel_tweet_hotel_bookmarks_path(@hoteltweet), method: :post %>
     <% end %> 
-     
-        </div>
-    </div>
+      お気に入り数： <%= @hoteltweet.hotel_bookmarks.count %> 
+         </tr> 
+      </tbody>
+    </table>
    
    <div class="option">
       <div class="favorite-btn">
