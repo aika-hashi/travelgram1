@@ -33,18 +33,43 @@ a {
 
 .store-btn {
   display: flex;align-items: center;
+  justify-content: center;
   margin-top: 24px;
+  
 }
 
-.apple-btn {
+.jalan-btn {
   margin-right: 1vw;
   height: 9vh;
+  width: 9vh;
 }
 
-.google-btn {
+.yahoo-btn {
   height: 9vh;
+  width: 15vh;
 }
 
+.rurubu-btn {
+  margin-right: 1vw;
+  height: 9vh;
+  width: 9vh;
+}
+
+.rakuten-btn {
+  height: 9vh;
+  width: 9vh;
+}
+
+.ikkyuu-btn {
+  margin-right: 1vw;
+  height: 9vh;
+  width: 9vh;
+}
+
+.hotelscom-btn {
+  height: 9vh;
+  width: 20vh;
+}
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
 
 /* FURIMAが選ばれる3つの理由部分 */
@@ -294,6 +319,7 @@ a {
 .star-btn {
   display: flex;
   align-items: center;
+ 
 }
 
 .star-icon {
