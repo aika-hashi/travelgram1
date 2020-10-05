@@ -14,18 +14,18 @@
     旅行専用投稿アプリ
     </p>
     <div class='store-btn'>
-    <div>
+    <div class='store1-btn'>
       <%= link_to image_tag("jaran.png", class:"jalan-btn"), "https://www.jalan.net/" %>
       <%= link_to image_tag("yahoo.png", class:"yahoo-btn"), "https://travel.yahoo.co.jp/" %>
        <%= link_to image_tag("rurubu.png", class:"rurubu-btn"), "https://www.rurubu.travel/?utm_medium=cpc&utm_source=google&utm_campaign=google_rurubu-htl_02-brandplus&utm_content=rurubutop__txt_rsa-1_&cid=1835687&gclid=CjwKCAjw-5v7BRAmEiwAJ3DpuLemL4PcnvfCuYZAL5oo2x4LsV0sh1xQAudTeK4fzejRd6v3Q4qc8hoCrHAQAvD_BwE" %>
-       </div>
-       <div>
        <%= link_to image_tag("rakuten.png", class:"rakuten-btn"), "https://travel.rakuten.co.jp/" %>
        <%= link_to image_tag("ikkyuu.png", class:"ikkyuu-btn"), "https://www.ikyu.com/fan/about.aspx" %>
        <%= link_to image_tag("hotelscom.png", class:"hotelscom-btn"), "https://jp.hotels.com/hoteru-otoku-joho/" %>
     </div>
     </div>
-  </div>
+    </div>
+    </div>
+  
   <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
 
   <%# 日本地図 %>
@@ -34,21 +34,25 @@
   <%# </div>   %> 
 
 
-
-
-
-
  <%= render "shared/japanmap" %>  
 
- 
+ <%# /日本地図 %>
 
-  <%# /日本地図 %>
 
-<!--吹き出しはじまり-->
-<div class="balloon1">
-  <p>投稿の検索ができます！</p>
+<%# 日本地図検索 %>
+ <div class="balloon1-top">
+<p> 地図をクリックして投稿検索できます！</p>
 </div>
 
+<%# /日本地図検索 %>
+ 
+
+<!--吹き出しはじまり-->
+<div>
+<div class="balloon2">
+  <p>投稿の検索ができます！</p>
+</div>
+</div>
 
 <!--吹き出し終わり-->
 
@@ -85,7 +89,9 @@
   <%= f.radio_button :price_lteq, '10000' %>10000円以下
   <%= f.radio_button :price_lteq, '15000' %>15000円以下
 </div>
+ <div class='search-btn'>
 <%= f.submit '検索' %>
+</div>
 
 <% end %>
   
