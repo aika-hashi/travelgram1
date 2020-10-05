@@ -239,12 +239,37 @@ a {
 
 /* //FURIMAの特徴 */
 
-/* 検索 */
+/* 検索の吹き出し */
+.balloon1 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon1:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+.balloon1 p {
+  margin: 0;
+  padding: 0;
+}
 
 
-
-
-/* //検索 */
+/* //検索の吹き出し */
 
 
 /* 投稿一覧 */
@@ -291,6 +316,8 @@ a {
 .item-img-content {
   position: relative;right:200px
 }
+
+
 
 .images {
   width: 100vh;

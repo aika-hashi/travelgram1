@@ -40,26 +40,24 @@
 
  <%= render "shared/japanmap" %>  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
   <%# /日本地図 %>
+
+<!--吹き出しはじまり-->
+<div class="balloon1">
+  <p>投稿の検索ができます！</p>
+</div>
+
+
+<!--吹き出し終わり-->
 
 <%# 検索%>
 
 <%# 宿泊施設・観光スポット検索欄%>
+<div>
 <span class= 'search-btn'>検索</span>
+</div>
 <%= search_form_for @search do |f| %>
 <div class='search-btn'>
   <%= f.label :title_cont, '宿泊施設・観光スポット名' %>
@@ -127,7 +125,9 @@
          <div class='item-img-content'> 
          <% hoteltweet.images.each do |image| %>
          <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
+         
            <%= image_tag image ,class: 'images'   %> 
+           
          <% end %>
          <% end %> 
           </div> 
