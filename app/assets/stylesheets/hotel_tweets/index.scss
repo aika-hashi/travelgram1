@@ -3,12 +3,13 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  background:white;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
+  height: 70vh;
   background-image: image-url('travel-header02.png');
   background-size: cover;
   background-repeat: no-repeat;
