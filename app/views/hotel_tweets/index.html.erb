@@ -54,31 +54,32 @@
 <%# 宿泊施設・観光スポット検索欄%>
 <span class= 'search-btn'>検索</span>
 <%= search_form_for @search do |f| %>
+<div class='search-btn'>
   <%= f.label :title_cont, '宿泊施設・観光スポット名' %>
   <%= f.search_field :title_cont %>
+</div>
 
 
-
-
+<div class='search-btn'>
 <%=f.label :area_id_eq,'都道府県'%>
 <%= f.collection_select :area_id_eq, Area.all,:id,:name, include_blank: '指定なし' %>
+  </div>
   
-  
 
 
-
+<div class='search-btn'>
  <%= f.label :local_cont, '地域' %>
   <%= f.search_field :local_cont %>
-
+</div>
   
-  
-  
+  <div class='search-btn'>
   <%= f.label :price,'料金' %>
   <%= f.radio_button :price_lteq, '' %>指定なし
   <%= f.radio_button :price_lteq, '5000' %>5000円以下
   <%= f.radio_button :price_lteq, '7500' %>7500円以下
   <%= f.radio_button :price_lteq, '10000' %>10000円以下
-
+  <%= f.radio_button :price_lteq, '15000' %>15000円以下
+</div>
 <%= f.submit '検索' %>
 
 <% end %>
