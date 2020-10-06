@@ -34,27 +34,45 @@
   <%# </div>   %> 
 
 
+<%# 日本地図の吹き出し %>
+<!--吹き出しはじまり-->
+<div class="balloon5">
+<div class="faceicon">
+<img src="harinezumi.png" alt="" width="300" height="200" >
+</div>
+<div class="chatting">
+<div class="says">
+<p>日本地図だよー</p>
+</div>
+</div>
+</div>
+<!--吹き出し終わり-->
+<%# /日本地図の吹き出し %>
 
 
 
-
+<div class="japan_map">
  <%= render "shared/japanmap" %>  
+</div>
 
 
+<%# /日本地図 %>
 
 
+<%# 日本地図検索 %>
+<div class="balloon1-top">
+<p> 地図をクリックして投稿検索できます！</p>
+</div>
 
+<%# /日本地図検索 %>
 
-
-
-
-
-
-
-
-
-
-  <%# /日本地図 %>
+<!--吹き出しはじまり-->
+<div>
+<div class="balloon2">
+<p>投稿の検索ができます！</p>
+</div>
+</div>
+<!--吹き出し終わり-->
 
 <%# 検索%>
 
@@ -87,7 +105,10 @@
   <%= f.radio_button :price_lteq, '10000' %>10000円以下
   <%= f.radio_button :price_lteq, '15000' %>15000円以下
 </div>
+
+<div class='search-btn'>
 <%= f.submit '検索' %>
+</div>
 
 <% end %>
   
