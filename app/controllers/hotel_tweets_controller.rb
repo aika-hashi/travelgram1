@@ -17,12 +17,12 @@ class HotelTweetsController < ApplicationController
   end
   
   def new
-    @hoteltweet = HotelTweet.new   #「UserDonation」に編集
+    @hoteltweet = HotelTweet.new   
   end
  
   def create
     
-    @hoteltweet = HotelTweet.new(hoteltweet_params)   #「UserDonation」に編集
+    @hoteltweet = HotelTweet.new(hoteltweet_params)   
   if @hoteltweet.save
    redirect_to  root_path
   else
