@@ -6,12 +6,12 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
-  amazon:
+amazon:
  service: S3
  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
  region: ap-northeast-1
- bucket: travelgram1-29185
+ bucket: travelgram1-29185 
 
  
 
