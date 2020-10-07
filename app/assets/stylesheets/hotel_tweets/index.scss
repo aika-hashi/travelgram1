@@ -32,12 +32,13 @@ a {
   line-height: 40px;
 }
 
-.store-btn {
-  display: flex;align-items: center;
-  justify-content: center;
-  margin-top: 24px;
+.store-btn1 {
+  display: flex;justify-content: center;
+  
+  margin-top: 400px;
   
 }
+
 
 .jalan-btn {
   margin-right: 1vw;
@@ -46,6 +47,7 @@ a {
 }
 
 .yahoo-btn {
+  margin-right: 1vw;
   height: 9vh;
   width: 15vh;
 }
@@ -57,6 +59,7 @@ a {
 }
 
 .rakuten-btn {
+  margin-right: 1vw;
   height: 9vh;
   width: 9vh;
 }
