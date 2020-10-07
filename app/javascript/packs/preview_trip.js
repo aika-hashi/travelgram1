@@ -1,6 +1,6 @@
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function(){
-    const ImageList = document.getElementById('image-list');
+    const ImageList = document.getElementById('images-list');
 
     const createImageHTML = (blob) => {
        // 画像を表示するためのdiv要素を生成
@@ -14,7 +14,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 
       // ファイル選択ボタンを生成
       const inputHTML = document.createElement('input')
-      inputHTML.setAttribute('id', `travel-image_${imageElementNum}`)
+      inputHTML.setAttribute('id', `travels-image_${imageElementNum}`)
       inputHTML.setAttribute('name', 'trip_tweet[images][]') 
       inputHTML.setAttribute('type', 'file')
 
@@ -31,7 +31,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       })
     };
 
-    document.getElementById('travel-image').addEventListener('change', (e) => { 
+    document.getElementById('travels-image').addEventListener('change', (e) => { 
      
 
       const file = e.target.files[0];
