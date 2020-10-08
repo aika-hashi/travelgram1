@@ -1,0 +1,17 @@
+.my-img{
+  display: flex;
+flex-wrap: wrap;
+flex: auto;
+
+}
+
+.my-img-content{
+
+}
+
+.myimages{
+  height: 33vh;
+  width: 33wh;
+
+}
+
