@@ -95,7 +95,7 @@
 
 <%  if  current_user.id == @hoteltweet.user_id %>
     <%= link_to '投稿の編集', edit_hotel_tweet_path(@hoteltweet.id), method: :get, class: "item-red-btn" %>
-  
+   <p class='or-text'>or</p>
     <%= link_to '削除', hotel_tweet_path(@hoteltweet.id), method: :delete, class:'item-destroy' %>
 <% end %>
 

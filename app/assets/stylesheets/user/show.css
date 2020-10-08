@@ -1,15 +1,19 @@
 .my-img{
-  display: flex;
-flex-wrap: wrap;
-flex: auto;
+  
 
 }
 
 .my-img-content{
-
+  display: flex;
+  
+  
+  
 }
 
 .myimages{
+  display: flex;
+  flex-wrap: wrap;
+  
   height: 33vh;
   width: 33wh;
 
