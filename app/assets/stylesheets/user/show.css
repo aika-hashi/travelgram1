@@ -5,7 +5,8 @@
 
 .my-img-content{
   display: flex;
-  
+  position: relative;
+}
   
   
 }
@@ -14,8 +15,8 @@
   display: flex;
   flex-wrap: wrap;
   
-  height: 33vh;
-  width: 33wh;
+  height: 40vh;
+  width: 40wh;
 
 }
 
