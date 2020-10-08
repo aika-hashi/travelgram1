@@ -88,7 +88,7 @@
 
 .detail-item {
   width: 20%;
-  background-color:lightpink;
+  background-color:burlywood;
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
@@ -207,4 +207,9 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+
+.container{
+  margin-top: 30px;
 }
