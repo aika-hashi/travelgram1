@@ -1,22 +1,24 @@
 .my-img{
+  display: flex;
   
-
+  flex-wrap: wrap;
+  
+  
 }
 
 .my-img-content{
-  display: flex;
-  position: relative;
+  
+  flex-wrap: wrap;  
+  
+
 }
   
   
-}
+
 
 .myimages{
-  display: flex;
-  flex-wrap: wrap;
+ 
   
-  height: 40vh;
-  width: 40wh;
 
 }
 
