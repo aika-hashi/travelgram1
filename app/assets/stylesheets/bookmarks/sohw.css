@@ -1,0 +1,12 @@
+.back-btn1{
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 8px 10%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin: 0px 250px;
+
+}
+

@@ -1,0 +1,25 @@
+.hotel_bookmark {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  
+  border: 2px solid #ffb340;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.trip_bookmark {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  
+  border: 2px solid #ffb340;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}

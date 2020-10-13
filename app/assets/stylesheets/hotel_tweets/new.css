@@ -203,7 +203,18 @@
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;
+  
 }
+
+.backs-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 8px 25%;
+  text-decoration: none;
+  
+}
+
 
 /* /下部ボタン */
 

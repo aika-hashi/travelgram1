@@ -1,24 +1,34 @@
 .my-img{
-  display: flex;
+  margin-top: 10px;
   
+  width: 100vw;
+  display: flex;
   flex-wrap: wrap;
+  
+  
+  
   
   
 }
 
 .my-img-content{
   
-  flex-wrap: wrap;  
+
+  
+  
+
+  
   
 
 }
   
-  
+
 
 
 .myimages{
- 
-  
+  height: 33vh;
+  width: 33vw;
 
+ 
 }
 

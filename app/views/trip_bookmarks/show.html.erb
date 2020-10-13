@@ -1,6 +1,7 @@
 <table>
-  <caption>宿泊施設お気に入り一覧</caption>
-  <div>
+<div>
+  <caption>観光スポットお気に入り一覧</caption>
+  </div>
   <tbody>
   
     <% @tripbookmark.each do |tripbookmark| %>
@@ -20,13 +21,10 @@
       
       <% end %>
       </tr>
-
-      <td><%=link_to 'もどる', user_path(current_user.id), class:"back-btn" %></td>
-
-
-       
     
     
   </tbody>
 </table>
+
+<%=link_to 'もどる', user_path(current_user.id), class:"back-btn1" %>
  
