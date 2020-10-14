@@ -1,9 +1,9 @@
-<div>
-  フォロー数： <%= current_user.follower.count %>
+<div class="follow_back">
+  <b>フォロー数： <%= current_user.follower.count %>
   フォロワー数：<%= current_user.followed.count %>
 </div><br><br>
 <table>
-    <caption>フォロー中</caption>
+    <caption><b>フォロー中</caption>
     <thead>
         <tr>
             <th>ユーザー名</th>
@@ -21,7 +21,7 @@
 </table><br><br>
 
 <table>
-    <caption>フォロワー</caption>
+    <caption><b>フォロワー</caption>
     <thead>
         <tr>
             <th>フォロワー名</th>

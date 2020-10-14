@@ -1,21 +1,21 @@
-<table>
-<div>
-  <caption>観光スポットお気に入り一覧</caption>
-  </div>
-  <tbody>
+<div class='my-imgs'>
+<tr>
+ <b> <div class='my-title'> 観光スポットお気に入り一覧</div>
+   
+      <div class='my-imgs-content'>
   
     <% @tripbookmark.each do |tripbookmark| %>
-      <tr>
-        <td><%= tripbookmark.trip_tweet.user.nickname %></td>
-        <td>
+      
+        <br>投稿ユーザー名:<%= tripbookmark.trip_tweet.user.nickname %>
+        
           <%= link_to trip_tweet_path(tripbookmark.trip_tweet) do %>
-            <%= tripbookmark.trip_tweet.title %>
+          <br>  観光スポット名:<%= tripbookmark.trip_tweet.title %>
           <% end %>
         </td>
          <td> 
             <% tripbookmark.trip_tweet.images.each do |image| %>
              <%= link_to trip_tweet_path(tripbookmark.trip_tweet) do %>
-          <%= image_tag image ,class: 'images'   %> </td>
+         <br> <%= image_tag image ,class: 'my-images'   %> 
          <% end %>
           <% end %>
       
@@ -23,8 +23,8 @@
       </tr>
     
     
-  </tbody>
-</table>
+  </div>
+</div>
 
 <%=link_to 'もどる', user_path(current_user.id), class:"back-btn1" %>
  

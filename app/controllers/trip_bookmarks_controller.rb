@@ -20,6 +20,6 @@ class TripBookmarksController < ApplicationController
     end
   end
   def show
-    @tripbookmark = TripBookmark.all.order("created_at DESC")
+    @tripbookmark = TripBookmark.where(user_id: current_user.id).order("created_at DESC").order("created_at DESC")
   end
 end

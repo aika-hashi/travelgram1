@@ -6,7 +6,60 @@
   text-decoration: none;
   display: flex;
   justify-content: center;
-  margin: 0px 250px;
+  margin: 20px 250px;
 
 }
 
+.hotel_bookmark {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  
+  border: 2px solid #ffb340;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.trip_bookmark {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  
+  border: 2px solid #ffb340;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.my-imgs{
+ 
+  margin-top: 10px;
+  margin-left: 270px;
+    
+  }
+  
+  .my-imgs-content{
+    width: 100vw;
+
+  
+  }
+    
+
+  .my-images{
+    height: 50vh;
+    width:50vw;
+    display: flex;
+    justify-content: center;
+    
+  
+   
+  }
+
+  .my-title{
+    font-size: 30px;
+  }
