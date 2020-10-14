@@ -6,7 +6,7 @@
       <%= image_tag @user.image ,class:"item-box-img" </div>  
    %>
     <h2 class="name">
-      <%= @triptweet.title %>
+      観光スポット名:<%= @triptweet.title %>
     </h2>
      <%#画像複数枚%>
        <div class='travel-img-content'> 
@@ -15,9 +15,10 @@
        <%end%> 
     <%#画像1枚%>
     <%# <%= image_tag @triptweet.image ,class:"item-box-img" %> 
-    
-      <span><%= @triptweet.text %></span>
    
+    <div>
+      <span><%= @triptweet.text %></span>
+   </div>
    
    
     <table class="detail-table">
