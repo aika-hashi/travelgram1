@@ -6,8 +6,8 @@
 
 .login-red-btn {
   width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background:pink;
+  border: 1px solid pink;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -23,4 +23,12 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+.registration-main{
+
+
+background-image: image-url('sea.png');
+background-repeat: no-repeat;
+background-size: cover;
+
 }
