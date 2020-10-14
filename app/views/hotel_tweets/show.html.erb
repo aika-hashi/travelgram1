@@ -27,9 +27,9 @@
     <%#画像1枚%>
     <%# <%= image_tag @hoteltweet.image ,class:"item-box-img" %> 
     
-
+     <div>
       <span><%= @hoteltweet.text %></span>
-   
+     </div>
    
    
     <table class="detail-table">
@@ -55,7 +55,7 @@
           <td class="detail-value"> ¥ <%= @hoteltweet.price%></td>
         </tr>
         <tr>
-          <th class="detail-item">元値</th>
+          <th class="detail-item">だいたいどのくらい安くなったか</th>
           <td class="detail-value"> ¥ <%= @hoteltweet.discount%></td>
         </tr>
         <tr>
@@ -95,7 +95,7 @@
 
 <%  if  current_user.id == @hoteltweet.user_id %>
     <%= link_to '投稿の編集', edit_hotel_tweet_path(@hoteltweet.id), method: :get, class: "item-red-btn" %>
-    <p class='or-text'></p>
+   <p class='or-text'>or</p>
     <%= link_to '削除', hotel_tweet_path(@hoteltweet.id), method: :delete, class:'item-destroy' %>
 <% end %>
 
@@ -104,22 +104,9 @@
 
 
 
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
-
+ 
 <%#追加コメント%>
+
 <div class="container">
     <% if current_user %>
       <%= form_with(model: [@hoteltweet, @hoteltweetcomment], local: true) do |form| %>
@@ -142,7 +129,12 @@
     </div>
   </div>
   
- 
+
+ <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
     
   
   

@@ -14,11 +14,23 @@
   <!-- ユーザーがログインしていた時の処理 -->
     
        <%# <li><%= link_to @tweet.user.image, user_path(current_user.id), class: "user-image"  %>
-        <li><%= link_to @user.nickname, "#", class: "user-nickname"  %>
-      <% if current_user.id == @user.id %>
-       <li><%= link_to '宿泊施設お気に入り一覧', hotel_tweet_hotel_bookmarks_path(@hoteltweet.id), class: "hotel_bookmark" %>
-      <li><%= link_to '観光スポットお気に入り一覧',  trip_tweet_trip_bookmarks_path(@triptweet.id), class: "trip_bookmark" %>
+        アカウントユーザー：<li><%= link_to @user.nickname, "#", class: "user-nickname"  %>
+
+        
+      <% if current_user.id == @user.id %> 
+  
+          
+       <li><%= link_to '宿泊施設お気に入り一覧', hotel_tweet_hotel_bookmarks_path(current_user.id), class: "hotel_bookmark" %>
+      
+  
+       
+  
+      <li><%= link_to '観光スポットお気に入り一覧',  trip_tweet_trip_bookmarks_path(current_user.id), class: "trip_bookmark" %>
+      
+       
    <% end %>
+  
+    
     </ul>
   </div>
 </header>

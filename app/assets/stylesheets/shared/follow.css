@@ -1,9 +1,19 @@
 .follow-btn {
   text-align: center;
-  background-color: lightskyblue;
+  background-color: burlywood;
   font-size: 24px;
   font-weight: bold;
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+}
+
+.follows-btn{
+  color: burlywood;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.item-red-btn{
+  margin-right: 200px;
 }

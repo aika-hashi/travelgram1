@@ -1,9 +1,12 @@
-<div>
-  フォロー数： <%= current_user.follower.count %>
+<div class="follow_back">
+ <div class="follow_font">
+  <b>フォロー数： <%= current_user.follower.count %>
   フォロワー数：<%= current_user.followed.count %>
 </div><br><br>
+
+
 <table>
-    <caption>フォロー中</caption>
+    <caption><b>フォロー中</caption>
     <thead>
         <tr>
             <th>ユーザー名</th>
@@ -21,7 +24,7 @@
 </table><br><br>
 
 <table>
-    <caption>フォロワー</caption>
+    <caption><b>フォロワー</caption>
     <thead>
         <tr>
             <th>フォロワー名</th>
@@ -34,12 +37,18 @@
         </tr>
         <% end %>
     </tbody>
+    
 </table>
+
 
 <table>
 <tr>
- <%=link_to 'もどる', user_path(current_user.id), class:"back-btn" %>
+ 
+ <%=link_to 'もどる', user_path(current_user.id), class:"backs-btns" %>
+ 
  </tr>
  </table>
+ </div>
+
 
 

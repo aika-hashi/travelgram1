@@ -20,6 +20,6 @@ class HotelBookmarksController < ApplicationController
     end
   end
   def show
-    @hotelbookmark = HotelBookmark.all.order("created_at DESC")
+    @hotelbookmark = HotelBookmark.where(user_id: current_user.id).order("created_at DESC")
   end
 end

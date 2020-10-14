@@ -1,20 +1,22 @@
-<table>
-  <caption>宿泊施設お気に入り一覧</caption>
-  <div>
-  <tbody>
-  
-    <% @hotelbookmark.each do |hotelbookmark| %>
-      <tr>
-        <td><%= hotelbookmark.hotel_tweet.user.nickname %></td>
-        <td>
+
+   
+  <div class='my-imgs'>
+  <tr>
+        <b> <div class='my-title'> 宿泊施設お気に入り一覧</div>
+              
+  <div class='my-imgs-content'>
+       <% @hotelbookmark.each do |hotelbookmark| %>
+     <br> 投稿ユーザー名:<%= hotelbookmark.hotel_tweet.user.nickname  %>
+        
+
           <%= link_to hotel_tweet_path(hotelbookmark.hotel_tweet) do %>
-            <%= hotelbookmark.hotel_tweet.title %>
-            </td>
+           <br> 宿泊施設名:<%= hotelbookmark.hotel_tweet.title %>
+            
             <% end %>
              <td> 
             <% hotelbookmark.hotel_tweet.images.each do |image| %>
              <%= link_to hotel_tweet_path(hotelbookmark.hotel_tweet) do %>
-          <%= image_tag image ,class: 'images'   %> </td>
+          <br><%= image_tag image ,class: 'my-images'   %> 
          <% end %>
           <% end %>
         
@@ -22,15 +24,11 @@
         <% end %>
       </tr>
         
-      <td><%=link_to 'もどる', user_path(current_user.id), class:"back-btn" %></td>
-      
-
-      
-
-       
+    </div>
+    </div>
     
-    
-  </tbody>
-</table>
+  
+
+<%=link_to 'もどる', user_path(current_user.id), class:"back-btn1" %>
  
 
