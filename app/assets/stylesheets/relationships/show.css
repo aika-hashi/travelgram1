@@ -1,3 +1,18 @@
 .follow_back{
-  color: burlywood;
+margin-left: 350px;
+font-size: 20px;
+}
+
+.follow_font{
+color: burlywood;
+font-size: 35px;
+}
+
+.backs-btns {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 8px 25%;
+  text-decoration: none;
+  
 }
