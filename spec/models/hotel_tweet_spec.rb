@@ -27,7 +27,7 @@ describe HotelTweet do
       it "imageが空だと登録できない" do
         @hoteltweet.image = nil
         @hoteltweet.valid?
-        expect(@hoteltweet.errors.full_messages).to include("Imageを入力してください")
+        expect(@hoteltweet.errors.full_messages).to include("Imagesを入力してください")
       end
       it "titleが空では登録できない" do
         @hoteltweet.title = nil

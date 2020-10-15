@@ -22,7 +22,7 @@ describe TripTweet do
       it "imageが空だと登録できない" do
         @triptweet.image = nil
         @triptweet.valid?
-        expect(@triptweet.errors.full_messages).to include("Imageを入力してください")
+        expect(@triptweet.errors.full_messages).to include("Imagesを入力してください")
       end
       it "titleが空では登録できない" do
         @triptweet.title = nil

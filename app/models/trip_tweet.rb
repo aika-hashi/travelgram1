@@ -14,6 +14,6 @@ class TripTweet < ApplicationRecord
   end
 
   validates :area_id, numericality: { other_than: 1 }
-  validates :image, :local, :title, :price,:text,presence: true
+  validates :images, :local, :title, :price,:text,presence: true
   #後でimages追加
 end
