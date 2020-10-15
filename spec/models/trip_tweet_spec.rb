@@ -2,13 +2,13 @@ require 'rails_helper'
 describe TripTweet do
   before do
     @triptweet = FactoryBot.build(:trip_tweet)
-    @triptweet.images = fixture_file_upload('app/assets/images/test_image.png')
+    @triptweet.image = fixture_file_upload('app/assets/images/test_image.png')
   end
   
 
   describe '投稿' do
     context '投稿がうまくいくとき' do
-      it "images、title、text、price、localが存在すれば登録できる" do
+      it "image、title、text、price、localが存在すれば登録できる" do
         expect(@triptweet).to be_valid
       end
       it "area、がid:1以外であれば登録できる" do
@@ -19,10 +19,10 @@ describe TripTweet do
     end
 
     context '投稿がうまくいかないとき' do
-      it "imagesが空だと登録できない" do
-        @triptweet.images = nil
+      it "imageが空だと登録できない" do
+        @triptweet.image = nil
         @triptweet.valid?
-        expect(@triptweet.errors.full_messages).to include("Imagesを入力してください")
+        expect(@triptweet.errors.full_messages).to include("Imageを入力してください")
       end
       it "titleが空では登録できない" do
         @triptweet.title = nil
