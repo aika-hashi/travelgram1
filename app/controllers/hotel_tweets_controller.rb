@@ -1,8 +1,6 @@
 class HotelTweetsController < ApplicationController
   def index
-    # @tweets = Tweet.all.order("created_at DESC")
-    # @trips = Trip.all.order("created_at DESC")
-
+   
     @search = HotelTweet.ransack(params[:q])
     @hoteltweet = @search.result(distinct: true).order("created_at DESC")
 
@@ -12,8 +10,7 @@ class HotelTweetsController < ApplicationController
     
 
     @hoteltweets = HotelTweet.all.includes(:user)
-    # @trips = Trip.all.includes(:user)
-    #  @user = User.find(params[:id])
+    
   end
   
   def new
