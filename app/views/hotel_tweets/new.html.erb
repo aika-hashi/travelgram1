@@ -37,14 +37,14 @@
           クリックしてファイルをアップロード
         </p>
         <%= f.file_field :image,name: 'hotel_tweet[images][]', id:"travel-image" %>
-        <div id="image-list"></div>
-      </div>
-    </div>
-
+        <div id="image-list"> </div>
+       
+ </div>
+  </div>
 <%#画像複数枚表示%>
-     <% @hoteltweet.images.each do |image| %>
-   <%= image_tag image, class: 'images' %> 
- <% end %> 
+     <%# <% @hoteltweet.images.each do |image| %>
+   <%# <%= image_tag image, class: 'images' %>   
+  <%# <% end %>   
     <%# /宿の画像 %>
 
 <%# 宿の動画 %>
