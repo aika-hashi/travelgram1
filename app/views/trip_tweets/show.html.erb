@@ -98,7 +98,7 @@
 <div class="container">
     <% if current_user %>
       <%= form_with(model: [@triptweet, @triptweetcomment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "10" %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "10" ,class:'comments' %>
         <%= form.submit "SEND" %>
       <% end %>
     <% else %>

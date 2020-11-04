@@ -144,6 +144,9 @@
 
 /* /商品の概要 */
 
+.comments{
+  width: 75vw;
+}
 
 
 .comment-box {
@@ -213,5 +216,6 @@
 
 
 .container{
+  
   margin-top: 30px;
 }
