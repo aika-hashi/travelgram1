@@ -110,7 +110,7 @@
 <div class="container">
     <% if current_user %>
       <%= form_with(model: [@hoteltweet, @hoteltweetcomment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "10" %>
         <%= form.submit "SEND" %>
       <% end %>
     <% else %>
@@ -118,6 +118,7 @@
     <% end %>
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
+      ※必須10行以内、絵文字不可
       <% if @hoteltweetcomments %>
         <% @hoteltweetcomments.each do |hoteltweetcomment| %>
           <p>
