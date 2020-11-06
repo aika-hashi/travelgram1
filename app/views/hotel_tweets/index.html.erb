@@ -101,11 +101,17 @@
 
  
 <%# 投稿一覧 %>
-  <%# 宿泊施設投稿一覧 %>
+  
   <div class='item-contents'>
     <h2 class='title'>旅行の投稿一覧</h2>
-     
-    
+
+<%# JSの %>
+<div id="app">
+ <div id="wrapper">
+  <h1>Swiper</h1>
+
+<%# /JSの %>
+    <%# 宿泊施設投稿一覧 %>
    <ul class='item-lists'>
       
       <% @hoteltweet.each do |hoteltweet| %>
@@ -206,22 +212,7 @@
          <% end %> 
           </div> 
 
-         <%#画１枚の時%>
-  <%# <%= link_to  trip_tweet_path(triptweet.id) do %> 
- <%# <div >  %>
- <%# <%=image_tag triptweet.image ,class:'item-img-content'%>  
-<%# </div>  %>
- <%# <% end %> 
-
-        <%# <p>
-          <strong>Video:</strong>
-        </p> %>
-         <%# <p>
-       <%= link_to trip.video_url.to_s do %>
-      <%# <%= image_tag(trip.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %> 
-       <%# <% end %> 
-        <%# </p>  %>
-
+         
        
         <div class='item-info'>
           
@@ -242,22 +233,23 @@
       </li>
        <% end %>
 
-      <%# お気に入り %>
-      
-       <%# <div class="row d-flex">
-  <%= render @tweets %>
-<%# </div>  %>
-     <%# /お気に入り %>
+      </div>
+</div>
 
     
        <%# /観光スポット投稿一覧 %>
-        
-
       
-      
-
      
   <%# /投稿一覧 %>
+
+  <%# JSへのリンク %>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.1.3/dist/vue-awesome-swiper.js"></script>
+  
+  
+  <%# /JSへのリンク %>
 
  
 
