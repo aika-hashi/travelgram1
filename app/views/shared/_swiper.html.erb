@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div id="wrapper">
+    
+
+    <swiper
+      :options="swiperOption"
+    >
+      
+            <% @hoteltweet.each do |hoteltweet| %>
+         <div class='item-img-content'> 
+       
+         <% hoteltweet.images.each do |image| %>
+         
+         <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
+            
+        
+           <swiper-slide>
+          <%= image_tag image ,class: 'images'   %>
+           
+         </swiper-slide>
+         <% end %>
+        <% end %> 
+        
+     </div>
+      <% end %> 
+           
+      <!-- ページネーションを追加 -->
+      <div class="swiper-pagination"  slot="pagination"></div>
+      <!-- ページ送りボタンを追加 -->
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+    </swiper>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.1.3/dist/vue-awesome-swiper.js"></script>
+<script src="swiper.js"></script>
+</body>
+</html>

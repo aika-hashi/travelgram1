@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+
+</head>
+
+<body>
+
 <%= render "shared/header" %>
 
 
@@ -21,11 +31,18 @@
     </h2>
     <%#画像複数枚%>
        <div class='travel-img-content'> 
+        <!-- Swiper START -->
+      <div class="swiper-container sample1 swiper-container-horizontal">
+	    <!-- メイン表示部分 -->
+	    <div class="swiper-wrapper">
+		<!-- 各スライド --> 
        <% @hoteltweet.images.each do |image| %> 
+        <div class="swiper-slide swiper-slide-active" > 
       <%= image_tag image ,class:"item-box-img" %> 
+       </div>
       <%end%> 
-    <%#画像1枚%>
-    <%# <%= image_tag @hoteltweet.image ,class:"item-box-img" %> 
+       </div>
+         </div> 
     
      <div>
       <span><%= @hoteltweet.text %></span>
@@ -140,5 +157,7 @@
   
   
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
 <%= render "shared/footer" %>
+</body>
+</html>
