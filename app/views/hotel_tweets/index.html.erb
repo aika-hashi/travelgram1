@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+
+</head>
+
+<body>
 <%= render "shared/header" %>
+
 
 <div class='main'>
 
@@ -96,16 +105,24 @@
 
 <%# /宿泊施設・観光スポット検索欄%>
 
+<%# JSの %>
+<%# <div id="app">
+ <div id="wrapper">
+   %>
 
+<%# /JSの %>
 
 
  
 <%# 投稿一覧 %>
-  <%# 宿泊施設投稿一覧 %>
+  
   <div class='item-contents'>
     <h2 class='title'>旅行の投稿一覧</h2>
-     
-    
+
+
+    <%# 宿泊施設投稿一覧 %>
+
+
    <ul class='item-lists'>
       
       <% @hoteltweet.each do |hoteltweet| %>
@@ -125,15 +142,38 @@
             
            </div> 
 
-           <%#画像複数枚の時%>
-         <div class='item-img-content'> 
-         <% hoteltweet.images.each do |image| %>
-         <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
-           <%= image_tag image ,class: 'images'   %> 
-         <% end %>
-         <% end %> 
-          </div> 
+         
 
+
+          
+         
+         <%#画像複数枚の時%>
+              
+    <div class='item-img-content'> 
+      <!-- Swiper START -->
+      <div class="swiper-container sample1 swiper-container-horizontal">
+	    <!-- メイン表示部分 -->
+	    <div class="swiper-wrapper">
+		<!-- 各スライド --> 
+         <% hoteltweet.images.each do |image| %>
+         
+         <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
+            
+           
+          <div class="swiper-slide swiper-slide-active" > 
+          <%= image_tag image ,class: 'images'   %>
+           </div>
+         
+         
+         <% end %>
+        <% end %> 
+         </div>
+         </div> 
+     </div>
+<!-- Swiper END -->
+
+     
+         
  <%#画１枚枚の時%>
  <%# <%= link_to  hotel_tweet_path(hoteltweet.id) do %> 
  <%# <div >  %>
@@ -169,11 +209,13 @@
         </div>
       </li>
        <% end %>
-        
+      
         <%# /宿泊施設投稿一覧 %>
   
 
   <%# 観光スポット投稿一覧 %>
+
+
     <ul class='item-lists'>
       
       <% @triptweet.each do |triptweet| %>
@@ -196,32 +238,20 @@
            </div>  
           
           <%#画複数枚の時%>
-             
+
+           
          <div class='item-img-content'> 
+         
          <% triptweet.images.each do |image| %> 
          <%= link_to  trip_tweet_path(triptweet.id) do %> 
-
+           
            <%= image_tag image ,class: 'images'   %> 
+             
          <% end %> 
          <% end %> 
+        
           </div> 
-
-         <%#画１枚の時%>
-  <%# <%= link_to  trip_tweet_path(triptweet.id) do %> 
- <%# <div >  %>
- <%# <%=image_tag triptweet.image ,class:'item-img-content'%>  
-<%# </div>  %>
- <%# <% end %> 
-
-        <%# <p>
-          <strong>Video:</strong>
-        </p> %>
-         <%# <p>
-       <%= link_to trip.video_url.to_s do %>
-      <%# <%= image_tag(trip.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %> 
-       <%# <% end %> 
-        <%# </p>  %>
-
+           
        
         <div class='item-info'>
           
@@ -242,23 +272,15 @@
       </li>
        <% end %>
 
-      <%# お気に入り %>
       
-       <%# <div class="row d-flex">
-  <%= render @tweets %>
-<%# </div>  %>
-     <%# /お気に入り %>
 
     
        <%# /観光スポット投稿一覧 %>
-        
-
       
-      
-
      
   <%# /投稿一覧 %>
 
+  
  
 
 
@@ -276,3 +298,9 @@
 </div>
 <%# <%= render "shared/footer" %> 
 
+
+
+
+
+</body>
+</html>
